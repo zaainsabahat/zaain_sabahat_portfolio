@@ -104,6 +104,36 @@
   }
   .nav-back:hover { color: var(--accent); }
 
+  .page-nav {
+    display: flex; align-items: center; gap: 0;
+    margin: 0 auto;
+  }
+  .page-nav-link {
+    padding: 0.4rem 1rem;
+    font-family: var(--mono); font-size: 0.62rem;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-mid); text-decoration: none;
+    transition: color 0.25s ease, background 0.25s ease;
+    border-left: 1px solid var(--rule-bright);
+    position: relative;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .page-nav-link:last-child { border-right: 1px solid var(--rule-bright); }
+  .page-nav-link:hover { color: var(--ink); background: var(--bg-panel); }
+  .page-nav-link.active { color: var(--accent); }
+  .page-nav-link.active::before {
+    content: ''; position: absolute;
+    left: 0; right: 0; bottom: -1rem;
+    height: 2px; background: var(--accent);
+  }
+  .page-nav-link .num {
+    color: var(--accent); font-size: 0.55rem; opacity: 0.7;
+  }
+  .page-nav-link.active .num { opacity: 1; }
+  @media (max-width: 900px) {
+    .page-nav { display: none; }
+  }
+
   main {
     max-width: 1300px;
     margin: 0 auto;
@@ -436,6 +466,12 @@
   <a href="index.html" class="wordmark">
     <span class="initials">Z</span>aain Sabahat<span class="crumb">/ credentials</span>
   </a>
+  <nav class="page-nav">
+    <a href="certifications.html" class="page-nav-link active"><span class="num">/01</span><span>Certifications</span></a>
+    <a href="projects.html" class="page-nav-link"><span class="num">/02</span><span>Projects</span></a>
+    <a href="track.html" class="page-nav-link"><span class="num">/03</span><span>Track</span></a>
+    <a href="index.html#contact" class="page-nav-link"><span class="num">/04</span><span>About</span></a>
+  </nav>
   <a href="index.html" class="nav-back">
     <span>←</span> Back to terminal
   </a>
