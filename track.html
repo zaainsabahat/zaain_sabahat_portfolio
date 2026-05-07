@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ZAAIN SABAHAT — Track Record</title>
+<meta name="description" content="Live track record across three markets. Every call timestamped, win or lose." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07090c;
+    --bg-panel: #0d1015;
+    --bg-elev: #11151c;
+    --bg-card: #161b24;
+    --ink: #ece8e0;
+    --ink-mid: #a8a59c;
+    --ink-dim: #6b6f78;
+    --ink-faint: #3a3f48;
+    --accent: #c9a875;
+    --accent-warm: #b8966a;
+    --accent-bright: #e0bc85;
+    --rule: #1a1f28;
+    --rule-bright: #262d39;
+    --pos: #6b9665;
+    --pos-bright: #88b87f;
+    --neg: #b66b6b;
+    --neg-bright: #d18888;
+    --serif: 'Fraunces', 'Times New Roman', serif;
+    --sans: 'Inter Tight', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', 'SF Mono', monospace;
+    --hand: 'Caveat', cursive;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  ::selection { background: var(--accent); color: var(--bg); }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--rule-bright); }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 9;
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.005) 0px,
+      rgba(255,255,255,0.005) 1px,
+      transparent 1px, transparent 3px
+    );
+  }
+
+  .grain {
+    position: fixed; inset: 0;
+    pointer-events: none; opacity: 0.04; z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .masthead {
+    position: sticky; top: 0; z-index: 100;
+    padding: 1rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(7, 9, 12, 0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--rule-bright);
+  }
+  .wordmark {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .wordmark .initials { font-style: italic; color: var(--accent); }
+  .wordmark .crumb {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-left: 0.85rem;
+    padding-left: 0.85rem;
+    border-left: 1px solid var(--rule-bright);
+  }
+  .nav-back {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    text-decoration: none;
+    transition: color 0.25s ease;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .nav-back:hover { color: var(--accent); }
+
+  main {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  /* === HERO === */
+  .hero-track {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-label::before {
+    content: ''; width: 30px; height: 1px; background: var(--accent);
+  }
+  .hero-label .live {
+    display: flex; align-items: center; gap: 0.4rem;
+    color: var(--pos);
+    font-weight: 500;
+  }
+  .hero-label .live::before {
+    content: ''; width: 6px; height: 6px;
+    background: var(--pos); border-radius: 50%;
+    box-shadow: 0 0 8px var(--pos);
+    animation: livePulse 2s ease-in-out infinite;
+  }
+  @keyframes livePulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 200;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    max-width: 18ch;
+  }
+  h1 em { font-style: italic; color: var(--accent); font-weight: 300; }
+
+  .hero-sub {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: var(--ink-mid);
+    max-width: 60ch;
+    margin-bottom: 1.5rem;
+  }
+  .hero-sub strong { color: var(--ink); font-weight: 400; }
+  .hero-sub em { color: var(--accent); font-style: italic; }
+
+  .disclaimer {
+    padding: 1rem 1.25rem;
+    background: rgba(201, 168, 117, 0.04);
+    border-left: 2px solid var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    line-height: 1.7;
+    color: var(--ink-mid);
+    max-width: 60ch;
+  }
+  .disclaimer strong { color: var(--accent); }
+
+  /* === MARKET TABS === */
+  .market-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1.75rem;
+    border-bottom: 1px solid var(--rule-bright);
+    overflow-x: auto;
+  }
+  .market-tab {
+    background: transparent;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    cursor: pointer;
+    transition: color 0.25s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    white-space: nowrap;
+  }
+  .market-tab::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+  .market-tab:hover { color: var(--ink); }
+  .market-tab.active { color: var(--ink); }
+  .market-tab.active::after { transform: scaleX(1); }
+  .market-tab .tab-count {
+    color: var(--ink-faint);
+    font-size: 0.6rem;
+    border: 1px solid var(--rule-bright);
+    padding: 0.15rem 0.45rem;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+  }
+  .market-tab.active .tab-count {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .market-tab .tab-status {
+    color: var(--ink-faint);
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+  }
+  .market-tab.coming .tab-status {
+    color: var(--accent);
+  }
+
+  /* === LAST UPDATED === */
+  .last-updated {
+    margin-bottom: 1.75rem;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .last-updated .v { color: var(--ink-mid); }
+
+  /* === SCOREBOARD === */
+  .scoreboard {
+    background: var(--bg-panel);
+    border: 1px solid var(--rule-bright);
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+  .scoreboard-head {
+    padding: 0.85rem 1.25rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    display: flex; justify-content: space-between;
+    flex-wrap: wrap; gap: 0.5rem;
+  }
+  .scoreboard-head .title { color: var(--accent); }
+
+  .scoreboard-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .score-cell {
+    padding: 1.5rem 1.25rem;
+    border-right: 1px solid var(--rule);
+    transition: background 0.3s ease;
+  }
+  .score-cell:last-child { border-right: none; }
+  .score-cell:hover { background: var(--bg-elev); }
+  .score-cell .label {
+    font-family: var(--mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.6rem;
+  }
+  .score-cell .value {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 1.65rem;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .score-cell .value .small {
+    font-size: 0.65em; color: var(--ink-faint);
+  }
+  .score-cell .value.acc { color: var(--accent); }
+  .score-cell .value.pos { color: var(--pos); }
+  .score-cell .value.neg { color: var(--neg); }
+
+  /* === FILTER BAR === */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+  }
+  .filter-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-right: 0.5rem;
+  }
+  .filter-btn {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    padding: 0.5rem 0.85rem;
+    border: 1px solid var(--rule-bright);
+    background: var(--bg-panel);
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .filter-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .filter-btn.active {
+    color: var(--bg);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .filter-btn .count {
+    margin-left: 0.4rem;
+    color: var(--ink-faint);
+    font-size: 0.58rem;
+  }
+  .filter-btn.active .count { color: var(--bg); opacity: 0.6; }
+
+  /* === CALL LIST === */
+  .call-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .call-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--rule-bright);
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+    position: relative;
+  }
+  .call-card:hover { border-color: var(--accent); }
+  .call-card.win { border-left: 3px solid var(--pos); }
+  .call-card.loss { border-left: 3px solid var(--neg); }
+  .call-card.open { border-left: 3px solid var(--accent); }
+
+  .call-head {
+    padding: 0.75rem 1.25rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .call-head .timestamp { color: var(--ink-mid); }
+  .call-head .market {
+    color: var(--accent);
+    border: 1px solid var(--rule-bright);
+    padding: 0.15rem 0.45rem;
+    font-size: 0.58rem;
+  }
+  .call-head .status {
+    padding: 0.15rem 0.55rem;
+    border: 1px solid;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+  }
+  .call-head .status.open {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(201, 168, 117, 0.06);
+  }
+  .call-head .status.closed.win {
+    color: var(--pos);
+    border-color: var(--pos);
+    background: rgba(107, 150, 101, 0.06);
+  }
+  .call-head .status.closed.loss {
+    color: var(--neg);
+    border-color: var(--neg);
+    background: rgba(182, 107, 107, 0.06);
+  }
+
+  .call-body {
+    padding: 1.5rem 1.25rem;
+    display: grid;
+    grid-template-columns: 1.4fr 1.1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  /* compact body for intraday calls */
+  .call-card.compact .call-body {
+    padding: 1.1rem 1.25rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .call-instrument {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .call-card.compact .call-instrument { font-size: 1.35rem; }
+  .call-instrument em {
+    font-family: var(--mono);
+    font-style: normal;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    margin-right: 0.5rem;
+  }
+  .call-instrument-full {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--ink-dim);
+    margin-bottom: 1rem;
+  }
+  .call-card.compact .call-instrument-full { margin-bottom: 0.6rem; }
+
+  .call-thesis {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--ink-mid);
+  }
+  .call-card.compact .call-thesis {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .call-levels {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .call-level {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px dashed var(--rule);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+  }
+  .call-level:last-child { border-bottom: none; padding-bottom: 0; }
+  .call-level .k {
+    color: var(--ink-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+  }
+  .call-level .v {
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+  }
+  .call-level .v.dir {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.55rem;
+    border: 1px solid;
+  }
+  .call-level .v.dir.long {
+    color: var(--pos); border-color: var(--pos);
+    background: rgba(107, 150, 101, 0.06);
+  }
+  .call-level .v.dir.short {
+    color: var(--neg); border-color: var(--neg);
+    background: rgba(182, 107, 107, 0.06);
+  }
+
+  .call-pnl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+    padding-left: 1.25rem;
+    border-left: 1px solid var(--rule);
+  }
+  .call-pnl .label {
+    font-family: var(--mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.6rem;
+  }
+  .call-pnl .primary {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.4rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .call-pnl .primary.pos { color: var(--pos-bright); }
+  .call-pnl .primary.neg { color: var(--neg-bright); }
+  .call-pnl .primary.open { color: var(--accent); }
+  .call-pnl .secondary {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ink-mid);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.05em;
+  }
+  .call-pnl .exit-info {
+    margin-top: 0.7rem;
+    padding-top: 0.7rem;
+    border-top: 1px dashed var(--rule);
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+  }
+  .call-pnl .exit-info .v { color: var(--ink-mid); }
+
+  .call-notes {
+    grid-column: 1 / -1;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px dashed var(--rule);
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--ink-mid);
+    display: flex;
+    gap: 0.85rem;
+  }
+  .call-notes::before {
+    content: '//';
+    font-family: var(--mono);
+    color: var(--accent);
+    font-style: normal;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    flex-shrink: 0;
+    padding-top: 0.2rem;
+  }
+
+  /* === EMPTY STATE === */
+  .empty {
+    padding: 4rem 2rem;
+    text-align: center;
+    color: var(--ink-faint);
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px dashed var(--rule-bright);
+  }
+
+  /* === COMING SOON BLOCK === */
+  .coming-soon {
+    padding: 4rem 2rem;
+    text-align: center;
+    border: 1px dashed var(--rule-bright);
+    background: var(--bg-panel);
+  }
+  .coming-soon-stamp {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .coming-soon-h {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 0.85rem;
+    max-width: 24ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .coming-soon-h em { font-style: italic; color: var(--accent); }
+  .coming-soon-text {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--ink-mid);
+    max-width: 50ch;
+    margin: 0 auto;
+  }
+  .coming-soon-text em { color: var(--accent); font-style: italic; }
+
+  /* === FOOTER === */
+  footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer a {
+    color: var(--ink-mid);
+    text-decoration: none;
+    transition: color 0.25s ease;
+  }
+  footer a:hover { color: var(--accent); }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 1000px) {
+    .scoreboard-grid { grid-template-columns: repeat(4, 1fr); }
+    .score-cell:nth-child(4) { border-right: none; }
+    .score-cell:nth-child(1), .score-cell:nth-child(2),
+    .score-cell:nth-child(3), .score-cell:nth-child(4) {
+      border-bottom: 1px solid var(--rule);
+    }
+    .call-body, .call-card.compact .call-body { grid-template-columns: 1fr 1fr; }
+    .call-pnl { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; align-items: center; padding-left: 0; padding-top: 1rem; border-left: none; border-top: 1px dashed var(--rule); text-align: left; }
+    .call-pnl .label { margin-bottom: 0; }
+    .call-pnl .primary { margin-bottom: 0; font-size: 1.6rem; }
+    .call-pnl .exit-info { margin-top: 0; padding-top: 0; border-top: none; }
+  }
+
+  @media (max-width: 640px) {
+    .masthead { padding: 0.85rem 1rem; }
+    .wordmark .crumb { display: none; }
+    main { padding: 2rem 1rem 3rem; }
+    h1 { font-size: 2rem; }
+    .hero-sub { font-size: 1rem; }
+    .scoreboard-grid { grid-template-columns: repeat(2, 1fr); }
+    .score-cell { padding: 1rem; }
+    .score-cell .value { font-size: 1.3rem; }
+    .score-cell:nth-child(odd) { border-right: 1px solid var(--rule); }
+    .score-cell:nth-child(even) { border-right: none; }
+    .score-cell:nth-child(7), .score-cell:nth-child(8) { border-bottom: none; }
+    .call-body, .call-card.compact .call-body { grid-template-columns: 1fr; gap: 1rem; padding: 1.25rem 1rem; }
+    .call-pnl { flex-direction: column; align-items: flex-start; }
+    .call-instrument { font-size: 1.35rem; }
+    .filter-bar { gap: 0.4rem; }
+    .filter-btn { font-size: 0.58rem; padding: 0.4rem 0.65rem; }
+    .market-tab { padding: 0.85rem 0.85rem; font-size: 0.6rem; gap: 0.5rem; }
+    .market-tab .tab-status { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="masthead">
+  <a href="index.html" class="wordmark">
+    <span class="initials">Z</span>aain Sabahat<span class="crumb">/ track</span>
+  </a>
+  <a href="index.html" class="nav-back">
+    <span>←</span> Back to terminal
+  </a>
+</header>
+
+<main>
+
+  <section class="hero-track">
+    <div class="hero-label">
+      § F1 — Track record
+      <span class="live">Live</span>
+    </div>
+
+    <h1>Every call, <em>timestamped</em>.</h1>
+
+    <p class="hero-sub">
+      My calls across three markets, posted as I trade them. <strong>Wins, losses, open positions — all visible.</strong> This page exists because <em>a track record without losers is a track record without truth</em>.
+    </p>
+
+    <div class="disclaimer">
+      <strong>Disclaimer.</strong> These are my personal trades, posted for transparency and self-discipline. <strong>Not investment advice.</strong> Past performance never guarantees future results, and you should not base any decision on what you read here.
+    </div>
+  </section>
+
+  <!-- MARKET TABS -->
+  <div class="market-tabs" id="market-tabs">
+    <button class="market-tab active" data-market="commodities">
+      Commodities
+      <span class="tab-count" id="tab-count-commodities">—</span>
+    </button>
+    <button class="market-tab" data-market="forex">
+      Forex Intraday
+      <span class="tab-count" id="tab-count-forex">—</span>
+    </button>
+    <button class="market-tab" data-market="psx">
+      PSX Swings
+      <span class="tab-count" id="tab-count-psx">—</span>
+    </button>
+  </div>
+
+  <!-- LAST UPDATED -->
+  <div class="last-updated" id="last-updated-wrap">
+    <span>Archive last updated:</span>
+    <span class="v" id="last-updated">—</span>
+  </div>
+
+  <!-- ACTIVE MARKET CONTENT -->
+  <div id="market-content"><!-- populated by JS --></div>
+
+  <footer>
+    <div>© 2026 Zaain Sabahat</div>
+    <div>
+      <a href="index.html">← Terminal</a>
+      &nbsp;·&nbsp;
+      <a href="certifications.html">Credentials</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:zaainsabahat@gmail.com">zaainsabahat@gmail.com</a>
+    </div>
+    <div>St. John's, Newfoundland</div>
+  </footer>
+
+</main>
+
+<script>
+  // ============================================
+  // TRADES — COMMODITIES (gold, crude, intraday)
+  // ============================================
+  const TRADES_COMMODITIES = [
+    {
+      "id": "2026-05-05-xauusd-1",
+      "date": "2026-05-05T13:42:00+05:00",
+      "instrument": "XAU/USD", "instrument_full": "Gold spot",
+      "market": "COMEX", "direction": "LONG",
+      "entry": 3284.50, "target": 3302.00, "stop": 3276.00,
+      "thesis": "Reclaim of NY session VWAP after London sweep; DXY softening into US data.",
+      "status": "open", "exit": null, "exit_date": null, "exit_reason": null, "notes": ""
+    },
+    {
+      "id": "2026-05-04-cl",
+      "date": "2026-05-04T19:15:00+05:00",
+      "instrument": "CL", "instrument_full": "WTI Crude futures",
+      "market": "NYMEX", "direction": "SHORT",
+      "entry": 64.80, "target": 63.90, "stop": 65.20,
+      "thesis": "Supply build pricing in; rejection at prior day VAH on declining delta.",
+      "status": "closed", "exit": 63.95,
+      "exit_date": "2026-05-04T21:50:00+05:00",
+      "exit_reason": "target hit", "notes": ""
+    },
+    {
+      "id": "2026-05-02-xauusd-1",
+      "date": "2026-05-02T18:30:00+05:00",
+      "instrument": "XAU/USD", "instrument_full": "Gold spot",
+      "market": "COMEX", "direction": "LONG",
+      "entry": 3271.20, "target": 3286.00, "stop": 3265.00,
+      "thesis": "Bid into Asia session highs; NFP day reaction fading.",
+      "status": "closed", "exit": 3265.00,
+      "exit_date": "2026-05-02T20:10:00+05:00",
+      "exit_reason": "stop hit",
+      "notes": "Got shaken on a quick spike. Stop was correctly placed; thesis was just too early — wait for a structural reclaim, not just a sweep."
+    },
+    {
+      "id": "2026-04-30-cl",
+      "date": "2026-04-30T18:55:00+05:00",
+      "instrument": "CL", "instrument_full": "WTI Crude futures",
+      "market": "NYMEX", "direction": "LONG",
+      "entry": 65.20, "target": 66.40, "stop": 64.70,
+      "thesis": "EIA inventory draw + bullish delta divergence on the 15m.",
+      "status": "closed", "exit": 66.35,
+      "exit_date": "2026-04-30T21:20:00+05:00",
+      "exit_reason": "target near", "notes": ""
+    },
+    {
+      "id": "2026-04-29-xauusd",
+      "date": "2026-04-29T17:10:00+05:00",
+      "instrument": "XAU/USD", "instrument_full": "Gold spot",
+      "market": "COMEX", "direction": "SHORT",
+      "entry": 3318.00, "target": 3300.00, "stop": 3325.00,
+      "thesis": "Failed breakout above prior day high; sellers stepping in on retest.",
+      "status": "closed", "exit": 3302.50,
+      "exit_date": "2026-04-29T19:05:00+05:00",
+      "exit_reason": "target near", "notes": ""
+    }
+  ];
+
+  // ============================================
+  // TRADES — FOREX (intraday)
+  // ============================================
+  const TRADES_FOREX = [
+    {
+      "id": "2026-05-05-eurusd",
+      "date": "2026-05-05T11:20:00+05:00",
+      "instrument": "EUR/USD", "instrument_full": "Euro vs US Dollar",
+      "market": "FX", "direction": "LONG",
+      "entry": 1.0842, "target": 1.0875, "stop": 1.0830,
+      "thesis": "London session reclaim of Asia low; ECB hawkish tone supporting bid.",
+      "status": "open", "exit": null, "exit_date": null, "exit_reason": null, "notes": ""
+    },
+    {
+      "id": "2026-05-04-gbpusd",
+      "date": "2026-05-04T13:45:00+05:00",
+      "instrument": "GBP/USD", "instrument_full": "British Pound vs US Dollar",
+      "market": "FX", "direction": "LONG",
+      "entry": 1.2615, "target": 1.2655, "stop": 1.2598,
+      "thesis": "Cable holding 1.26 handle; BOE-Fed differential narrative supportive.",
+      "status": "closed", "exit": 1.2651,
+      "exit_date": "2026-05-04T16:30:00+05:00",
+      "exit_reason": "target near", "notes": ""
+    },
+    {
+      "id": "2026-05-03-usdjpy",
+      "date": "2026-05-03T08:55:00+05:00",
+      "instrument": "USD/JPY", "instrument_full": "US Dollar vs Japanese Yen",
+      "market": "FX", "direction": "SHORT",
+      "entry": 153.40, "target": 152.60, "stop": 153.80,
+      "thesis": "Asia session rejection at 153.50; MoF intervention risk priced in.",
+      "status": "closed", "exit": 153.82,
+      "exit_date": "2026-05-03T11:10:00+05:00",
+      "exit_reason": "stop hit",
+      "notes": "Stopped on a fast move higher. Tight stop on a noisy pair was the wrong choice — should have either widened or skipped."
+    },
+    {
+      "id": "2026-05-01-eurusd",
+      "date": "2026-05-01T14:20:00+05:00",
+      "instrument": "EUR/USD", "instrument_full": "Euro vs US Dollar",
+      "market": "FX", "direction": "SHORT",
+      "entry": 1.0890, "target": 1.0855, "stop": 1.0905,
+      "thesis": "Failed breakout above prior week high; sellers defending the round number.",
+      "status": "closed", "exit": 1.0858,
+      "exit_date": "2026-05-01T17:35:00+05:00",
+      "exit_reason": "target near", "notes": ""
+    },
+    {
+      "id": "2026-04-29-audusd",
+      "date": "2026-04-29T09:40:00+05:00",
+      "instrument": "AUD/USD", "instrument_full": "Australian Dollar vs US Dollar",
+      "market": "FX", "direction": "LONG",
+      "entry": 0.6428, "target": 0.6460, "stop": 0.6415,
+      "thesis": "Risk-on session; AUD reclaiming Asia VWAP.",
+      "status": "closed", "exit": 0.6457,
+      "exit_date": "2026-04-29T13:55:00+05:00",
+      "exit_reason": "target near", "notes": ""
+    }
+  ];
+
+  // ============================================
+  // TRADES — PSX SWING BOOK
+  // ============================================
+  const TRADES_PSX = [
+    {
+      "id": "2026-05-03-engro",
+      "date": "2026-05-03T09:42:00+05:00",
+      "instrument": "ENGRO", "instrument_full": "Engro Corporation",
+      "market": "PSX", "direction": "LONG",
+      "entry": 287.50, "target": 305.00, "stop": 278.00,
+      "thesis": "Q1 results beat on margins; sector rotation into fertilizers building. Watching 290 as confirmation of breakout.",
+      "status": "open", "exit": null, "exit_date": null, "exit_reason": null, "notes": ""
+    },
+    {
+      "id": "2026-04-28-luck",
+      "date": "2026-04-28T11:05:00+05:00",
+      "instrument": "LUCK", "instrument_full": "Lucky Cement",
+      "market": "PSX", "direction": "LONG",
+      "entry": 612.00, "target": 645.00, "stop": 598.00,
+      "thesis": "Cement demand reaccelerating into FY27 budget; LUCK trades at trough multiples versus peers.",
+      "status": "closed", "exit": 643.50,
+      "exit_date": "2026-05-02T14:18:00+05:00",
+      "exit_reason": "target hit", "notes": ""
+    },
+    {
+      "id": "2026-04-22-ogdc",
+      "date": "2026-04-22T10:30:00+05:00",
+      "instrument": "OGDC", "instrument_full": "Oil & Gas Development Co.",
+      "market": "PSX", "direction": "SHORT",
+      "entry": 142.00, "target": 132.00, "stop": 146.00,
+      "thesis": "Crude weakness + circular debt overhang; technical rejection at 144 multiple times.",
+      "status": "closed", "exit": 145.80,
+      "exit_date": "2026-04-25T13:45:00+05:00",
+      "exit_reason": "stop hit",
+      "notes": "Stop hit on geopolitical bid in crude. Macro overrode the bottom-up thesis — should have waited for the OPEC meeting before entering."
+    },
+    {
+      "id": "2026-04-15-mcb",
+      "date": "2026-04-15T09:55:00+05:00",
+      "instrument": "MCB", "instrument_full": "MCB Bank",
+      "market": "PSX", "direction": "LONG",
+      "entry": 218.40, "target": 235.00, "stop": 211.00,
+      "thesis": "Banks lagging the index; high real rates support NIMs; payout history strong.",
+      "status": "closed", "exit": 232.10,
+      "exit_date": "2026-04-23T15:02:00+05:00",
+      "exit_reason": "trailing exit", "notes": ""
+    },
+    {
+      "id": "2026-04-08-fcepl",
+      "date": "2026-04-08T11:20:00+05:00",
+      "instrument": "FCEPL", "instrument_full": "FrieslandCampina Engro Pakistan",
+      "market": "PSX", "direction": "LONG",
+      "entry": 92.50, "target": 102.00, "stop": null,
+      "thesis": "Margin recovery story playing out earlier than consensus expected; rural demand inflection.",
+      "status": "closed", "exit": 98.30,
+      "exit_date": "2026-04-18T10:15:00+05:00",
+      "exit_reason": "partial target",
+      "notes": "No formal stop on this one (pre-discipline). Took partial gain and moved on. Going forward — every trade gets a stop on entry."
+    },
+    {
+      "id": "2026-03-28-pol",
+      "date": "2026-03-28T10:10:00+05:00",
+      "instrument": "POL", "instrument_full": "Pakistan Oilfields",
+      "market": "PSX", "direction": "LONG",
+      "entry": 528.00, "target": 565.00, "stop": null,
+      "thesis": "E&P discount narrowing; dividend yield support at 8%+; technical base building.",
+      "status": "closed", "exit": 511.00,
+      "exit_date": "2026-04-04T14:30:00+05:00",
+      "exit_reason": "thesis broke",
+      "notes": "Closed out below entry when crude rolled over hard. No formal stop — exited on thesis invalidation. This is exactly why I started using stops."
+    },
+    {
+      "id": "2026-03-20-mlcf",
+      "date": "2026-03-20T11:45:00+05:00",
+      "instrument": "MLCF", "instrument_full": "Maple Leaf Cement",
+      "market": "PSX", "direction": "LONG",
+      "entry": 48.20, "target": 54.00, "stop": null,
+      "thesis": "Cement sector breakout setup; smaller-cap proxy with higher beta to demand turn.",
+      "status": "closed", "exit": 52.40,
+      "exit_date": "2026-03-31T13:20:00+05:00",
+      "exit_reason": "target near", "notes": ""
+    },
+    {
+      "id": "2026-03-12-hbl",
+      "date": "2026-03-12T10:05:00+05:00",
+      "instrument": "HBL", "instrument_full": "Habib Bank",
+      "market": "PSX", "direction": "LONG",
+      "entry": 132.50, "target": 145.00, "stop": null,
+      "thesis": "Lagging the bank rally; results catalyst in 2 weeks.",
+      "status": "closed", "exit": 128.20,
+      "exit_date": "2026-03-19T14:55:00+05:00",
+      "exit_reason": "thesis broke",
+      "notes": "Sold off into results — sector rotated out before the print. Lesson: don't add late-cycle catalyst trades when the sector has already run."
+    }
+  ];
+
+  const MARKET_DATA = {
+    commodities: {
+      trades: TRADES_COMMODITIES,
+      label: 'Commodities Book',
+      tz: 'Asia/Karachi',
+      tzShort: 'PKT',
+      compact: true,
+      description: 'Gold and crude oil intraday calls.'
+    },
+    forex: {
+      trades: TRADES_FOREX,
+      label: 'Forex Intraday Book',
+      tz: 'Asia/Karachi',
+      tzShort: 'PKT',
+      compact: true,
+      description: 'Major FX pair intraday calls.'
+    },
+    psx: {
+      trades: TRADES_PSX,
+      label: 'PSX Swing Book',
+      tz: 'Asia/Karachi',
+      tzShort: 'PKT',
+      compact: false,
+      description: 'Long-only swing trades on the Pakistan Stock Exchange. Multi-day to multi-week holds.'
+    }
+  };
+
+  let activeMarket = 'commodities';
+  let activeFilter = 'all';
+
+  // ============================================
+  // CALCULATIONS
+  // ============================================
+  function pctReturn(t) {
+    if (t.status !== 'closed' || t.exit == null) return null;
+    const dir = t.direction === 'LONG' ? 1 : -1;
+    return ((t.exit - t.entry) / t.entry) * 100 * dir;
+  }
+  function rMultiple(t) {
+    if (t.status !== 'closed' || t.exit == null || t.stop == null) return null;
+    const dir = t.direction === 'LONG' ? 1 : -1;
+    const risk = Math.abs(t.entry - t.stop);
+    if (risk === 0) return null;
+    return ((t.exit - t.entry) * dir) / risk;
+  }
+  function isWin(t) {
+    const r = pctReturn(t);
+    return r != null && r > 0;
+  }
+  function isLoss(t) {
+    const r = pctReturn(t);
+    return r != null && r <= 0;
+  }
+  function fmtDate(iso, tz, tzShort, opts = {}) {
+    const d = new Date(iso);
+    const o = {
+      day: '2-digit', month: 'short', year: opts.year ? 'numeric' : undefined,
+      hour: '2-digit', minute: '2-digit',
+      timeZone: tz, hour12: false
+    };
+    return d.toLocaleString('en-GB', o).replace(',', ' ·') + ' ' + tzShort;
+  }
+  function fmtDateShort(iso, tz) {
+    const d = new Date(iso);
+    return d.toLocaleString('en-GB', {
+      day: '2-digit', month: 'short', year: 'numeric',
+      timeZone: tz
+    });
+  }
+
+  // ============================================
+  // RENDER MARKET TABS COUNTS
+  // ============================================
+  document.getElementById('tab-count-psx').textContent = TRADES_PSX.length;
+  document.getElementById('tab-count-commodities').textContent = TRADES_COMMODITIES.length;
+  document.getElementById('tab-count-forex').textContent = TRADES_FOREX.length;
+
+  // ============================================
+  // RENDER ACTIVE MARKET
+  // ============================================
+  function renderMarket() {
+    const m = MARKET_DATA[activeMarket];
+    const wrap = document.getElementById('market-content');
+    const luWrap = document.getElementById('last-updated-wrap');
+
+    if (m.trades.length === 0) {
+      luWrap.style.display = 'none';
+      wrap.innerHTML = `
+        <div class="coming-soon">
+          <div class="coming-soon-stamp">// ${m.label} · Coming online</div>
+          <h2 class="coming-soon-h">Building <em>this book</em> in public.</h2>
+          <p class="coming-soon-text">${m.description}</p>
+        </div>
+      `;
+      return;
+    }
+
+    luWrap.style.display = '';
+
+    // running stats
+    const closed = m.trades.filter(t => t.status === 'closed');
+    const open = m.trades.filter(t => t.status === 'open');
+    const wins = closed.filter(isWin);
+    const losses = closed.filter(isLoss);
+    const winRate = closed.length > 0 ? (wins.length / closed.length) * 100 : 0;
+    const returns = closed.map(pctReturn).filter(r => r != null);
+    const totalReturn = returns.reduce((a, b) => a + b, 0);
+    const avgReturn = returns.length > 0 ? totalReturn / returns.length : 0;
+    const rTrades = closed.map(rMultiple).filter(r => r != null);
+    const avgR = rTrades.length > 0 ? rTrades.reduce((a, b) => a + b, 0) / rTrades.length : null;
+    const bestPct = returns.length > 0 ? Math.max(...returns) : 0;
+    const worstPct = returns.length > 0 ? Math.min(...returns) : 0;
+
+    // since
+    const earliest = m.trades.reduce((min, t) => !min || new Date(t.date) < new Date(min) ? t.date : min, null);
+    const sinceLabel = earliest ? `SINCE ${fmtDateShort(earliest, m.tz).toUpperCase()}` : '—';
+
+    // last updated
+    const latest = m.trades.reduce((max, t) => {
+      const d = t.exit_date || t.date;
+      return !max || new Date(d) > new Date(max) ? d : max;
+    }, null);
+    if (latest) {
+      document.getElementById('last-updated').textContent = fmtDate(latest, m.tz, m.tzShort, { year: true });
+    }
+
+    // filter trades
+    let list = m.trades.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+    if (activeFilter === 'open') list = list.filter(t => t.status === 'open');
+    if (activeFilter === 'closed') list = list.filter(t => t.status === 'closed');
+    if (activeFilter === 'win') list = list.filter(isWin);
+    if (activeFilter === 'loss') list = list.filter(isLoss);
+
+    // build call cards
+    const callsHtml = list.length === 0
+      ? `<div class="empty">No calls match this filter.</div>`
+      : list.map(t => {
+        const pct = pctReturn(t);
+        const r = rMultiple(t);
+        const cardClass = t.status === 'open' ? 'open' : (isWin(t) ? 'win' : 'loss');
+        const statusClass = t.status === 'open' ? 'open' : `closed ${isWin(t) ? 'win' : 'loss'}`;
+        const statusText = t.status === 'open' ? 'OPEN' : (isWin(t) ? 'CLOSED · WIN' : 'CLOSED · LOSS');
+
+        let pnlBlock;
+        if (t.status === 'open') {
+          pnlBlock = `
+            <div class="call-pnl">
+              <div class="label">Live P&L</div>
+              <div class="primary open">—</div>
+              <div class="secondary">Position open</div>
+            </div>`;
+        } else {
+          const pctClass = pct >= 0 ? 'pos' : 'neg';
+          const pctStr = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
+          const rStr = r !== null ? (r >= 0 ? '+' : '') + r.toFixed(2) + 'R' : null;
+          pnlBlock = `
+            <div class="call-pnl">
+              <div class="label">Result</div>
+              <div class="primary ${pctClass}">${pctStr}</div>
+              ${rStr ? `<div class="secondary">${rStr}</div>` : `<div class="secondary" style="color: var(--ink-faint); font-style: italic;">% only · no stop</div>`}
+              <div class="exit-info">
+                EXIT <span class="v">${t.exit}</span> · ${t.exit_reason || '—'}
+                <br>${fmtDate(t.exit_date, m.tz, m.tzShort)}
+              </div>
+            </div>`;
+        }
+
+        return `
+          <article class="call-card ${cardClass}${m.compact ? ' compact' : ''}" id="${t.id}">
+            <div class="call-head">
+              <span class="timestamp">${fmtDate(t.date, m.tz, m.tzShort, { year: true })}</span>
+              <span class="market">${t.market}</span>
+              <span class="status ${statusClass}">${statusText}</span>
+            </div>
+            <div class="call-body">
+              <div>
+                <div class="call-instrument">
+                  <em>${t.instrument}</em>${t.instrument_full || ''}
+                </div>
+                <p class="call-thesis">${t.thesis}</p>
+              </div>
+              <div class="call-levels">
+                <div class="call-level">
+                  <span class="k">Direction</span>
+                  <span class="v dir ${t.direction.toLowerCase()}">${t.direction}</span>
+                </div>
+                <div class="call-level">
+                  <span class="k">Entry</span>
+                  <span class="v">${t.entry}</span>
+                </div>
+                <div class="call-level">
+                  <span class="k">Target</span>
+                  <span class="v">${t.target}</span>
+                </div>
+                <div class="call-level">
+                  <span class="k">Stop</span>
+                  <span class="v">${t.stop !== null ? t.stop : '—'}</span>
+                </div>
+              </div>
+              ${pnlBlock}
+              ${t.notes ? `<div class="call-notes">${t.notes}</div>` : ''}
+            </div>
+          </article>
+        `;
+      }).join('');
+
+    // assemble
+    wrap.innerHTML = `
+      <section class="scoreboard">
+        <div class="scoreboard-head">
+          <span class="title">// Scoreboard · ${m.label} · auto-computed</span>
+          <span>${sinceLabel}</span>
+        </div>
+        <div class="scoreboard-grid">
+          <div class="score-cell">
+            <div class="label">Total calls</div>
+            <div class="value">${m.trades.length}</div>
+          </div>
+          <div class="score-cell">
+            <div class="label">Open</div>
+            <div class="value acc">${open.length}</div>
+          </div>
+          <div class="score-cell">
+            <div class="label">Closed</div>
+            <div class="value">${closed.length}</div>
+          </div>
+          <div class="score-cell">
+            <div class="label">Win rate</div>
+            <div class="value ${winRate >= 50 ? 'pos' : 'neg'}">${winRate.toFixed(0)}%</div>
+          </div>
+          <div class="score-cell">
+            <div class="label">Avg return</div>
+            <div class="value ${avgReturn >= 0 ? 'pos' : 'neg'}">${(avgReturn >= 0 ? '+' : '') + avgReturn.toFixed(1)}%</div>
+          </div>
+          <div class="score-cell">
+            <div class="label">Best win</div>
+            <div class="value pos">+${bestPct.toFixed(1)}%</div>
+          </div>
+          <div class="score-cell">
+            <div class="label">Worst loss</div>
+            <div class="value neg">${worstPct.toFixed(1)}%</div>
+          </div>
+          <div class="score-cell">
+            <div class="label">Avg R</div>
+            <div class="value ${avgR === null ? '' : (avgR >= 0 ? 'pos' : 'neg')}">${avgR !== null ? (avgR >= 0 ? '+' : '') + avgR.toFixed(2) + 'R' : '—'}</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="filter-bar">
+        <span class="filter-label">// filter</span>
+        <button class="filter-btn ${activeFilter === 'all' ? 'active' : ''}" data-filter="all">All <span class="count">${m.trades.length}</span></button>
+        <button class="filter-btn ${activeFilter === 'open' ? 'active' : ''}" data-filter="open">Open <span class="count">${open.length}</span></button>
+        <button class="filter-btn ${activeFilter === 'closed' ? 'active' : ''}" data-filter="closed">Closed <span class="count">${closed.length}</span></button>
+        <button class="filter-btn ${activeFilter === 'win' ? 'active' : ''}" data-filter="win">Winners <span class="count">${wins.length}</span></button>
+        <button class="filter-btn ${activeFilter === 'loss' ? 'active' : ''}" data-filter="loss">Losers <span class="count">${losses.length}</span></button>
+      </div>
+
+      <div class="call-list">${callsHtml}</div>
+    `;
+
+    // wire filter buttons
+    wrap.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeFilter = btn.dataset.filter;
+        renderMarket();
+      });
+    });
+  }
+
+  // ============================================
+  // MARKET TAB SWITCHING
+  // ============================================
+  document.querySelectorAll('.market-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.market-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      activeMarket = tab.dataset.market;
+      activeFilter = 'all';
+      renderMarket();
+    });
+  });
+
+  // INIT
+  renderMarket();
+</script>
+
+</body>
+</html>

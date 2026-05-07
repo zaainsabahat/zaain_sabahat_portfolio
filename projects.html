@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ZAAIN SABAHAT — Projects</title>
+<meta name="description" content="Equity research, screening models, and macro frameworks. The work, not the claim." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07090c;
+    --bg-panel: #0d1015;
+    --bg-elev: #11151c;
+    --bg-card: #161b24;
+    --ink: #ece8e0;
+    --ink-mid: #a8a59c;
+    --ink-dim: #6b6f78;
+    --ink-faint: #3a3f48;
+    --accent: #c9a875;
+    --accent-warm: #b8966a;
+    --accent-bright: #e0bc85;
+    --rule: #1a1f28;
+    --rule-bright: #262d39;
+    --pos: #6b9665;
+    --pos-bright: #88b87f;
+    --neg: #b66b6b;
+    --neg-bright: #d18888;
+    --serif: 'Fraunces', 'Times New Roman', serif;
+    --sans: 'Inter Tight', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', 'SF Mono', monospace;
+    --hand: 'Caveat', cursive;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  ::selection { background: var(--accent); color: var(--bg); }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--rule-bright); }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 9;
+    background-image: repeating-linear-gradient(
+      0deg, rgba(255,255,255,0.005) 0px, rgba(255,255,255,0.005) 1px,
+      transparent 1px, transparent 3px);
+  }
+
+  .grain {
+    position: fixed; inset: 0;
+    pointer-events: none; opacity: 0.04; z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .masthead {
+    position: sticky; top: 0; z-index: 100;
+    padding: 1rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(7, 9, 12, 0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--rule-bright);
+  }
+  .wordmark {
+    font-family: var(--serif); font-size: 1rem;
+    color: var(--ink); letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .wordmark .initials { font-style: italic; color: var(--accent); }
+  .wordmark .crumb {
+    font-family: var(--mono); font-size: 0.6rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-left: 0.85rem; padding-left: 0.85rem;
+    border-left: 1px solid var(--rule-bright);
+  }
+  .nav-back {
+    font-family: var(--mono); font-size: 0.65rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-mid);
+    text-decoration: none;
+    transition: color 0.25s ease;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .nav-back:hover { color: var(--accent); }
+
+  main { max-width: 1300px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+
+  .hero {
+    margin-bottom: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-label {
+    font-family: var(--mono); font-size: 0.65rem;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-label::before {
+    content: ''; width: 30px; height: 1px; background: var(--accent);
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 200;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1; letter-spacing: -0.025em;
+    color: var(--ink); margin-bottom: 1.5rem;
+    max-width: 18ch;
+  }
+  h1 em { font-style: italic; color: var(--accent); font-weight: 300; }
+  .hero-sub {
+    font-family: var(--serif); font-weight: 300;
+    font-size: 1.15rem; line-height: 1.65;
+    color: var(--ink-mid); max-width: 60ch;
+  }
+  .hero-sub em { color: var(--accent); font-style: italic; }
+  .hero-sub strong { color: var(--ink); font-weight: 400; }
+
+  /* index nav */
+  .proj-nav {
+    display: flex; gap: 0;
+    margin-bottom: 3rem;
+    border: 1px solid var(--rule-bright);
+    overflow: hidden;
+  }
+  .proj-nav a {
+    flex: 1;
+    padding: 1.1rem 1.5rem;
+    font-family: var(--mono); font-size: 0.65rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-mid);
+    text-decoration: none;
+    border-right: 1px solid var(--rule-bright);
+    transition: all 0.25s ease;
+    display: flex; flex-direction: column; gap: 0.4rem;
+  }
+  .proj-nav a:last-child { border-right: none; }
+  .proj-nav a:hover { background: var(--bg-panel); color: var(--accent); }
+  .proj-nav a .num {
+    color: var(--accent);
+    font-size: 0.55rem;
+  }
+  .proj-nav a .nm {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    font-weight: 300;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    font-style: italic;
+  }
+
+  /* project section */
+  .proj-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--rule);
+    scroll-margin-top: 80px;
+  }
+  .proj-section:first-of-type { padding-top: 0; border-top: none; margin-top: 0; }
+
+  .proj-section-tag {
+    font-family: var(--mono); font-size: 0.6rem;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1rem;
+  }
+  .proj-section-h {
+    font-family: var(--serif); font-weight: 300;
+    font-size: clamp(1.85rem, 3vw, 2.5rem);
+    line-height: 1.05; letter-spacing: -0.02em;
+    color: var(--ink); margin-bottom: 1rem;
+    max-width: 22ch;
+  }
+  .proj-section-h em { font-style: italic; color: var(--accent); font-weight: 300; }
+  .proj-section-tag-row {
+    font-family: var(--mono); font-size: 0.62rem;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 2rem;
+  }
+
+  .proj-body {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  .proj-body-text {
+    font-family: var(--serif); font-weight: 300;
+    font-size: 1rem; line-height: 1.7;
+    color: var(--ink-mid);
+  }
+  .proj-body-text p + p { margin-top: 1rem; }
+  .proj-body-text strong { color: var(--ink); font-weight: 400; }
+  .proj-body-text em { color: var(--accent); font-style: italic; }
+
+  .proj-meta-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--rule-bright);
+    padding: 1.25rem;
+    height: fit-content;
+  }
+  .pmc-row {
+    display: flex; justify-content: space-between;
+    padding: 0.65rem 0;
+    border-bottom: 1px dashed var(--rule);
+    font-family: var(--mono); font-size: 0.7rem;
+  }
+  .pmc-row:last-child { border-bottom: none; }
+  .pmc-row .k {
+    color: var(--ink-faint);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+  }
+  .pmc-row .v {
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .pmc-row .v.acc { color: var(--accent); }
+  .pmc-row .v.pos { color: var(--pos); }
+
+  .proj-cta-row {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .proj-cta {
+    font-family: var(--mono); font-size: 0.65rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--accent);
+    transition: all 0.25s ease;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .proj-cta:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+
+  /* tearsheet — same as homepage but bigger */
+  .ts-block {
+    background: var(--bg-panel);
+    border: 1px solid var(--rule-bright);
+    margin-top: 2.5rem;
+  }
+  .ts-block .ts-head {
+    padding: 0.85rem 1.25rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule-bright);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .ts-ticker { display: flex; align-items: baseline; gap: 0.85rem; }
+  .ts-sym {
+    font-family: var(--mono); font-weight: 700;
+    font-size: 1.1rem; color: var(--ink);
+    letter-spacing: 0.05em;
+  }
+  .ts-name {
+    font-family: var(--serif); font-style: italic;
+    font-weight: 300; font-size: 0.9rem; color: var(--ink-mid);
+  }
+  .ts-tag {
+    font-family: var(--mono); font-size: 0.55rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-faint);
+    border: 1px solid var(--rule-bright);
+    padding: 0.2rem 0.55rem;
+  }
+  .ts-rating-row {
+    display: grid; grid-template-columns: 1fr 1.5fr;
+    border-bottom: 1px solid var(--rule);
+    padding: 1.5rem 1.25rem;
+    background: linear-gradient(90deg, rgba(107, 150, 101, 0.04) 0%, transparent 50%);
+  }
+  .ts-rating { padding-right: 1.5rem; border-right: 1px solid var(--rule); }
+  .ts-rating-label, .ts-pt-label {
+    font-family: var(--mono); font-size: 0.55rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: 0.4rem;
+  }
+  .ts-rating-v {
+    font-family: var(--serif); font-weight: 400;
+    font-size: 2.4rem; line-height: 1;
+    color: var(--pos-bright); letter-spacing: -0.02em;
+  }
+  .ts-pt { padding-left: 1.5rem; }
+  .ts-pt-v {
+    font-family: var(--serif); font-weight: 300;
+    font-size: 2.4rem; line-height: 1;
+    color: var(--accent); letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .ts-pt-up {
+    font-family: var(--mono); font-size: 0.7rem;
+    color: var(--pos); margin-top: 0.4rem; letter-spacing: 0.05em;
+  }
+  .ts-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+  }
+  .ts-cell {
+    padding: 1.1rem 1.25rem;
+    border-right: 1px solid var(--rule);
+  }
+  .ts-cell:nth-child(3n) { border-right: none; }
+  .ts-cell:nth-child(n+4) { border-top: 1px solid var(--rule); }
+  .ts-k {
+    font-family: var(--mono); font-size: 0.55rem;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: 0.4rem;
+  }
+  .ts-v {
+    font-family: var(--serif); font-weight: 400;
+    font-size: 1.25rem; color: var(--ink);
+    letter-spacing: -0.01em; font-variant-numeric: tabular-nums;
+  }
+
+  /* methodology callout */
+  .methodology {
+    margin-top: 2.5rem;
+    padding: 1.5rem 1.5rem;
+    background: rgba(201, 168, 117, 0.04);
+    border-left: 2px solid var(--accent);
+  }
+  .methodology h4 {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .methodology ul { list-style: none; }
+  .methodology li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--rule);
+    color: var(--ink-mid);
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 0.95rem;
+    display: flex; gap: 0.85rem;
+  }
+  .methodology li:last-child { border-bottom: none; }
+  .methodology li::before {
+    content: '·';
+    color: var(--accent);
+    font-size: 1.1rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .methodology em { color: var(--accent); font-style: italic; }
+  .methodology strong { color: var(--ink); font-weight: 400; }
+
+  footer {
+    margin-top: 5rem; padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 0.6rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-faint);
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer a { color: var(--ink-mid); text-decoration: none; transition: color 0.25s ease; }
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 900px) {
+    main { padding: 2rem 1rem 3rem; }
+    .masthead { padding: 0.85rem 1rem; }
+    .wordmark .crumb { display: none; }
+    h1 { font-size: 2rem; }
+    .proj-body { grid-template-columns: 1fr; gap: 2rem; }
+    .proj-nav { flex-direction: column; }
+    .proj-nav a { border-right: none; border-bottom: 1px solid var(--rule-bright); }
+    .ts-rating-row { grid-template-columns: 1fr 1fr; }
+    .ts-rating { padding-right: 1rem; }
+    .ts-pt { padding-left: 1rem; }
+    .ts-rating-v, .ts-pt-v { font-size: 1.8rem; }
+    .ts-grid { grid-template-columns: repeat(2, 1fr); }
+    .ts-cell:nth-child(3n) { border-right: 1px solid var(--rule); }
+    .ts-cell:nth-child(2n) { border-right: none; }
+    .ts-cell:nth-child(n+3) { border-top: 1px solid var(--rule); }
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="masthead">
+  <a href="index.html" class="wordmark">
+    <span class="initials">Z</span>aain Sabahat<span class="crumb">/ projects</span>
+  </a>
+  <a href="index.html" class="nav-back">
+    <span>←</span> Back to terminal
+  </a>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-label">§ F4 — Projects</div>
+    <h1>The work, <em>not the claim</em>.</h1>
+    <p class="hero-sub">
+      Three projects I've built and use day-to-day. <strong>One full equity research note</strong>, <strong>one quarterly screener</strong>, and <strong>one weekly macro framework</strong>. Real artifacts, not placeholders. <em>Each one earned its place in my workflow before it earned its place on this site.</em>
+    </p>
+  </section>
+
+  <nav class="proj-nav">
+    <a href="#nvda"><span class="num">/ 01</span><span class="nm">Equity Research</span></a>
+    <a href="#screener"><span class="num">/ 02</span><span class="nm">Equity Screener</span></a>
+    <a href="#macro"><span class="num">/ 03</span><span class="nm">Macro Framework</span></a>
+  </nav>
+
+  <!-- ============================================
+       PROJECT 01 — NVDA EQUITY RESEARCH
+       ============================================ -->
+  <section class="proj-section" id="nvda">
+    <div class="proj-section-tag">// 01 — Equity research</div>
+    <h2 class="proj-section-h">A full <em>research note</em> on NVIDIA.</h2>
+    <div class="proj-section-tag-row">Sell-side · Tech · DCF · Comps · Scenarios</div>
+
+    <div class="proj-body">
+      <div class="proj-body-text">
+        <p>
+          <strong>NVIDIA</strong> is one of the few names where the bull case and the bear case both have credible fundamentals — that's exactly what makes it worth modelling carefully rather than reciting a thesis from memory.
+        </p>
+        <p>
+          The note builds a <em>standalone DCF</em> with explicit revenue and margin assumptions out to FY27, triangulates against peer multiples, and then runs three scenario paths (bear, base, bull) to bound the price target. The conclusion: <strong>BUY at $222</strong>, with the DCF mid-case at $235 — call it ~18% upside from the print date.
+        </p>
+        <p>
+          The work that matters here isn't the answer, it's the <em>method</em>. WACC is decomposed and defended; terminal growth is a real assumption, not 3% by reflex; sensitivity tables show where the valuation breaks. A recruiter reading this should be able to challenge any single input and see exactly where it flows through.
+        </p>
+      </div>
+
+      <div class="proj-meta-card">
+        <div class="pmc-row"><span class="k">Subject</span><span class="v">NVIDIA Corp.</span></div>
+        <div class="pmc-row"><span class="k">Ticker</span><span class="v acc">NVDA</span></div>
+        <div class="pmc-row"><span class="k">Sector</span><span class="v">Tech · Semis</span></div>
+        <div class="pmc-row"><span class="k">Rating</span><span class="v pos">BUY</span></div>
+        <div class="pmc-row"><span class="k">Price target</span><span class="v acc">$222</span></div>
+        <div class="pmc-row"><span class="k">DCF value</span><span class="v">$235</span></div>
+        <div class="pmc-row"><span class="k">WACC</span><span class="v">10.5%</span></div>
+        <div class="pmc-row"><span class="k">Terminal g</span><span class="v">3.0%</span></div>
+        <div class="pmc-row"><span class="k">Implied upside</span><span class="v pos">~+18%</span></div>
+        <div class="pmc-row"><span class="k">Format</span><span class="v">PDF · Excel</span></div>
+      </div>
+    </div>
+
+    <div class="ts-block">
+      <div class="ts-head">
+        <div class="ts-ticker">
+          <span class="ts-sym">NVDA</span>
+          <span class="ts-name">NVIDIA Corporation</span>
+        </div>
+        <div class="ts-tag">EQUITY · NDQ</div>
+      </div>
+      <div class="ts-rating-row">
+        <div class="ts-rating">
+          <div class="ts-rating-label">Rating</div>
+          <div class="ts-rating-v">BUY</div>
+        </div>
+        <div class="ts-pt">
+          <div class="ts-pt-label">12-mo PT</div>
+          <div class="ts-pt-v">$222</div>
+          <div class="ts-pt-up">↑ 18% upside</div>
+        </div>
+      </div>
+      <div class="ts-grid">
+        <div class="ts-cell"><div class="ts-k">DCF Value</div><div class="ts-v">$235</div></div>
+        <div class="ts-cell"><div class="ts-k">WACC</div><div class="ts-v">10.5%</div></div>
+        <div class="ts-cell"><div class="ts-k">Terminal g</div><div class="ts-v">3.0%</div></div>
+        <div class="ts-cell"><div class="ts-k">FY27e Rev</div><div class="ts-v">$210B</div></div>
+        <div class="ts-cell"><div class="ts-k">FY27e EPS</div><div class="ts-v">$6.10</div></div>
+        <div class="ts-cell"><div class="ts-k">Implied P/E</div><div class="ts-v">36.4×</div></div>
+      </div>
+    </div>
+
+    <div class="methodology">
+      <h4>// What the note covers</h4>
+      <ul>
+        <li><strong>Bottom-up DCF</strong> with explicit FY24–FY27 revenue and margin paths, decomposed by segment</li>
+        <li><strong>Peer multiple analysis</strong> against AMD, AVGO, INTC, plus broader hyperscaler comp set</li>
+        <li><strong>Three-scenario range</strong>: bear ($165) · base ($222) · bull ($280) with explicit assumption deltas</li>
+        <li><strong>Sensitivity tables</strong> on WACC × terminal growth and revenue CAGR × terminal margin</li>
+        <li><strong>Risk register</strong>: customer concentration, geopolitical, valuation, technology cycle</li>
+      </ul>
+    </div>
+
+    <div class="proj-cta-row">
+      <a href="#" class="proj-cta">Download full PDF report <span>→</span></a>
+      <span style="font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.15em; color: var(--ink-faint); text-transform: uppercase;">+ 1 more report in catalogue</span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PROJECT 02 — EQUITY SCREENER
+       ============================================ -->
+  <section class="proj-section" id="screener">
+    <div class="proj-section-tag">// 02 — Equity screening model</div>
+    <h2 class="proj-section-h">A <em>multi-factor screener</em> for the PSX universe.</h2>
+    <div class="proj-section-tag-row">Excel · Quarterly refresh · 100+ tickers</div>
+
+    <div class="proj-body">
+      <div class="proj-body-text">
+        <p>
+          A quarterly model that pulls in <strong>EPS history, sector P/Es, current price, and analyst-estimated next-quarter EPS</strong> for the full PSX universe — KSE-100, KMI-30, and broader all-share names. Roughly 100+ tickers refreshed every reporting season.
+        </p>
+        <p>
+          The output is a <em>shortlist</em>. Every name is scored against three rules: EPS Q/Q expansion, valuation within ±1.5× of sector P/E, and implied upside greater than 25%. Names that pass all three become <strong>candidates for the swing book</strong>; everything else gets monitored for the next quarter.
+        </p>
+        <p>
+          This isn't a black box — every formula is visible, every input is sourced, and every shortlisted name has to survive a manual fundamental review before it gets traded. The screener is the funnel; the work happens after.
+        </p>
+      </div>
+
+      <div class="proj-meta-card">
+        <div class="pmc-row"><span class="k">Universe</span><span class="v">PSX · 100+ tickers</span></div>
+        <div class="pmc-row"><span class="k">Refresh</span><span class="v">Quarterly · post-results</span></div>
+        <div class="pmc-row"><span class="k">Factors</span><span class="v">3 · multiplicative</span></div>
+        <div class="pmc-row"><span class="k">Rule 1</span><span class="v acc">EPS Q/Q ↑</span></div>
+        <div class="pmc-row"><span class="k">Rule 2</span><span class="v acc">P/E vs sector ±1.5</span></div>
+        <div class="pmc-row"><span class="k">Rule 3</span><span class="v acc">Upside &gt; 25%</span></div>
+        <div class="pmc-row"><span class="k">Output</span><span class="v">Shortlist · ranked</span></div>
+        <div class="pmc-row"><span class="k">Tooling</span><span class="v">Excel · sparklines</span></div>
+        <div class="pmc-row"><span class="k">Used since</span><span class="v">2024</span></div>
+      </div>
+    </div>
+
+    <div class="methodology">
+      <h4>// Methodology</h4>
+      <ul>
+        <li><strong>Step 1.</strong> Pull EPS for the last 7 quarters per ticker; compute trailing-12-month EPS and Q/Q growth %</li>
+        <li><strong>Step 2.</strong> Calculate P/E using current price ÷ T12M EPS; benchmark against sector P/E (SCStrade reference)</li>
+        <li><strong>Step 3.</strong> Compute next-quarter expected EPS; project annualised forward EPS; build expected price under sector P/E</li>
+        <li><strong>Step 4.</strong> Rank names by upside %; flag those satisfying all three rules</li>
+        <li><strong>Step 5.</strong> <em>Manual fundamental review</em> on the shortlist — sector context, accounting quality, results day reaction</li>
+      </ul>
+    </div>
+
+    <div class="proj-cta-row">
+      <a href="#" class="proj-cta">View Excel methodology deck <span>→</span></a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PROJECT 03 — MACRO FRAMEWORK
+       ============================================ -->
+  <section class="proj-section" id="macro">
+    <div class="proj-section-tag">// 03 — US macro framework</div>
+    <h2 class="proj-section-h">A weekly <em>release calendar</em>, mapped to cross-asset.</h2>
+    <div class="proj-section-tag-row">Excel · Weekly · ISM · NFP · CPI · FOMC · GDP · PCE</div>
+
+    <div class="proj-body">
+      <div class="proj-body-text">
+        <p>
+          Every month, the US data cycle prints in roughly the same shape: <strong>ISM in week 1</strong>, <strong>CPI in week 2</strong>, <strong>FOMC in week 3</strong>, <strong>GDP and PCE in week 4</strong>. Knowing this isn't impressive on its own — but reading <em>which release matters most for which trade</em> is.
+        </p>
+        <p>
+          The framework is a workbook with 12+ tabs, one per primary release. Each tab logs: <strong>actual vs forecast</strong>, the <em>surprise direction</em>, and the historical reaction in DXY, gold, indices, and risk. Over time it becomes a database of how the market has actually responded — not how textbook says it should.
+        </p>
+        <p>
+          I read it on Sunday nights. Whatever's coming that week tells me which positions to size up, which to flatten, and which to skip entirely. The framework doesn't predict; it <em>contextualises</em>.
+        </p>
+      </div>
+
+      <div class="proj-meta-card">
+        <div class="pmc-row"><span class="k">Cycle</span><span class="v">US · monthly</span></div>
+        <div class="pmc-row"><span class="k">Releases tracked</span><span class="v acc">12+</span></div>
+        <div class="pmc-row"><span class="k">Primary</span><span class="v">ISM · NFP · CPI · GDP · PCE</span></div>
+        <div class="pmc-row"><span class="k">Secondary</span><span class="v">PPI · Retail · Housing · Claims</span></div>
+        <div class="pmc-row"><span class="k">Fed</span><span class="v">FOMC · Minutes · Speeches</span></div>
+        <div class="pmc-row"><span class="k">Cross-asset</span><span class="v">USD · gold · indices · risk</span></div>
+        <div class="pmc-row"><span class="k">Refresh</span><span class="v">Weekly · Sunday review</span></div>
+        <div class="pmc-row"><span class="k">Tooling</span><span class="v">Excel · 12+ tabs</span></div>
+      </div>
+    </div>
+
+    <div class="methodology">
+      <h4>// What's in the workbook</h4>
+      <ul>
+        <li><strong>Master calendar</strong> — every release placed in its typical week and weekday, primary/secondary tagged</li>
+        <li><strong>Per-release tabs</strong> — ISM Manufacturing, ISM Services, NFP, CPI m/m, CPI y/y, PPI, Retail Sales, Industrial Production, GDP advance, Core PCE</li>
+        <li><strong>Surprise tracking</strong> — actual vs consensus, beat/miss flag, magnitude in standard deviations</li>
+        <li><strong>Reaction logging</strong> — how DXY, XAU/USD, ES futures, and VIX moved in the 30-min and 4-hour window post-release</li>
+        <li><strong>Fed speech tracker</strong> — Powell, vice chair, regional presidents, with hawkish/dovish flags</li>
+        <li><strong>Jackson Hole archive</strong> — annual symposium notes</li>
+      </ul>
+    </div>
+
+    <div class="proj-cta-row">
+      <a href="#" class="proj-cta">View full framework <span>→</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <div>© 2026 Zaain Sabahat</div>
+    <div>
+      <a href="index.html">← Terminal</a>
+      &nbsp;·&nbsp;
+      <a href="track.html">Track record</a>
+      &nbsp;·&nbsp;
+      <a href="certifications.html">Credentials</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:zaainsabahat@gmail.com">zaainsabahat@gmail.com</a>
+    </div>
+    <div>St. John's, Newfoundland</div>
+  </footer>
+
+</main>
+
+</body>
+</html>
