@@ -1,698 +1,977 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ZAAIN SABAHAT — Credentials</title>
-<meta name="description" content="Bloomberg Market Concepts, funded trading evaluations, and additional credentials." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #07090c;
-    --bg-panel: #0d1015;
-    --bg-elev: #11151c;
-    --bg-card: #161b24;
-    --ink: #ece8e0;
-    --ink-mid: #a8a59c;
-    --ink-dim: #6b6f78;
-    --ink-faint: #3a3f48;
-    --accent: #c9a875;
-    --accent-warm: #b8966a;
-    --accent-bright: #e0bc85;
-    --rule: #1a1f28;
-    --rule-bright: #262d39;
-    --pos: #6b9665;
-    --pos-bright: #88b87f;
-    --neg: #b66b6b;
-    --serif: 'Fraunces', 'Times New Roman', serif;
-    --sans: 'Inter Tight', -apple-system, sans-serif;
-    --mono: 'JetBrains Mono', 'SF Mono', monospace;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  ::selection { background: var(--accent); color: var(--bg); }
-  ::-webkit-scrollbar { width: 6px; height: 6px; }
-  ::-webkit-scrollbar-track { background: var(--bg); }
-  ::-webkit-scrollbar-thumb { background: var(--rule-bright); }
-  ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ZAAIN SABAHAT — Credentials</title>
+		<meta
+			name="description"
+			content="Bloomberg Market Concepts, funded trading evaluations, and additional credentials."
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			:root {
+				--bg: #07090c;
+				--bg-panel: #0d1015;
+				--bg-elev: #11151c;
+				--bg-card: #161b24;
+				--ink: #ece8e0;
+				--ink-mid: #a8a59c;
+				--ink-dim: #6b6f78;
+				--ink-faint: #3a3f48;
+				--accent: #c9a875;
+				--accent-warm: #b8966a;
+				--accent-bright: #e0bc85;
+				--rule: #1a1f28;
+				--rule-bright: #262d39;
+				--pos: #6b9665;
+				--pos-bright: #88b87f;
+				--neg: #b66b6b;
+				--serif: "Fraunces", "Times New Roman", serif;
+				--sans: "Inter Tight", -apple-system, sans-serif;
+				--mono: "JetBrains Mono", "SF Mono", monospace;
+			}
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			html {
+				scroll-behavior: smooth;
+			}
+			::selection {
+				background: var(--accent);
+				color: var(--bg);
+			}
+			::-webkit-scrollbar {
+				width: 6px;
+				height: 6px;
+			}
+			::-webkit-scrollbar-track {
+				background: var(--bg);
+			}
+			::-webkit-scrollbar-thumb {
+				background: var(--rule-bright);
+			}
+			::-webkit-scrollbar-thumb:hover {
+				background: var(--accent);
+			}
 
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--sans);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    min-height: 100vh;
-  }
+			body {
+				background: var(--bg);
+				color: var(--ink);
+				font-family: var(--sans);
+				line-height: 1.5;
+				-webkit-font-smoothing: antialiased;
+				min-height: 100vh;
+			}
 
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    pointer-events: none; z-index: 9;
-    background-image: repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,0.005) 0px,
-      rgba(255,255,255,0.005) 1px,
-      transparent 1px, transparent 3px
-    );
-  }
+			body::before {
+				content: "";
+				position: fixed;
+				inset: 0;
+				pointer-events: none;
+				z-index: 9;
+				background-image: repeating-linear-gradient(
+					0deg,
+					rgba(255, 255, 255, 0.005) 0px,
+					rgba(255, 255, 255, 0.005) 1px,
+					transparent 1px,
+					transparent 3px
+				);
+			}
 
-  .grain {
-    position: fixed; inset: 0;
-    pointer-events: none; opacity: 0.04; z-index: 1;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
+			.grain {
+				position: fixed;
+				inset: 0;
+				pointer-events: none;
+				opacity: 0.04;
+				z-index: 1;
+				background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+			}
 
-  /* MASTHEAD */
-  .masthead {
-    position: sticky; top: 0; z-index: 100;
-    padding: 1rem 2rem;
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(7, 9, 12, 0.92);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--rule-bright);
-  }
-  .wordmark {
-    font-family: var(--serif);
-    font-size: 1rem;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-    text-decoration: none;
-  }
-  .wordmark .initials { font-style: italic; color: var(--accent); }
-  .wordmark .crumb {
-    font-family: var(--mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-dim);
-    margin-left: 0.85rem;
-    padding-left: 0.85rem;
-    border-left: 1px solid var(--rule-bright);
-  }
-  .nav-back {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-mid);
-    text-decoration: none;
-    transition: color 0.25s ease;
-    display: flex; align-items: center; gap: 0.5rem;
-  }
-  .nav-back:hover { color: var(--accent); }
+			/* MASTHEAD */
+			.masthead {
+				position: sticky;
+				top: 0;
+				z-index: 100;
+				padding: 1rem 2rem;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				background: rgba(7, 9, 12, 0.92);
+				backdrop-filter: blur(14px);
+				border-bottom: 1px solid var(--rule-bright);
+			}
+			.wordmark {
+				font-family: var(--serif);
+				font-size: 1rem;
+				color: var(--ink);
+				letter-spacing: -0.01em;
+				text-decoration: none;
+			}
+			.wordmark .initials {
+				font-style: italic;
+				color: var(--accent);
+			}
+			.wordmark .crumb {
+				font-family: var(--mono);
+				font-size: 0.6rem;
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				color: var(--ink-dim);
+				margin-left: 0.85rem;
+				padding-left: 0.85rem;
+				border-left: 1px solid var(--rule-bright);
+			}
+			.nav-back {
+				font-family: var(--mono);
+				font-size: 0.65rem;
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				color: var(--ink-mid);
+				text-decoration: none;
+				transition: color 0.25s ease;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+			.nav-back:hover {
+				color: var(--accent);
+			}
 
-  .page-nav {
-    display: flex; align-items: center; gap: 0;
-    margin: 0 auto;
-  }
-  .page-nav-link {
-    padding: 0.4rem 1rem;
-    font-family: var(--mono); font-size: 0.62rem;
-    letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--ink-mid); text-decoration: none;
-    transition: color 0.25s ease, background 0.25s ease;
-    border-left: 1px solid var(--rule-bright);
-    position: relative;
-    display: flex; align-items: center; gap: 0.4rem;
-  }
-  .page-nav-link:last-child { border-right: 1px solid var(--rule-bright); }
-  .page-nav-link:hover { color: var(--ink); background: var(--bg-panel); }
-  .page-nav-link.active { color: var(--accent); }
-  .page-nav-link.active::before {
-    content: ''; position: absolute;
-    left: 0; right: 0; bottom: -1rem;
-    height: 2px; background: var(--accent);
-  }
-  .page-nav-link .num {
-    color: var(--accent); font-size: 0.55rem; opacity: 0.7;
-  }
-  .page-nav-link.active .num { opacity: 1; }
-  @media (max-width: 900px) {
-    .page-nav { display: none; }
-  }
+			.page-nav {
+				display: flex;
+				align-items: center;
+				gap: 0;
+				margin: 0 auto;
+			}
+			.page-nav-link {
+				padding: 0.4rem 1rem;
+				font-family: var(--mono);
+				font-size: 0.62rem;
+				letter-spacing: 0.16em;
+				text-transform: uppercase;
+				color: var(--ink-mid);
+				text-decoration: none;
+				transition:
+					color 0.25s ease,
+					background 0.25s ease;
+				border-left: 1px solid var(--rule-bright);
+				position: relative;
+				display: flex;
+				align-items: center;
+				gap: 0.4rem;
+			}
+			.page-nav-link:last-child {
+				border-right: 1px solid var(--rule-bright);
+			}
+			.page-nav-link:hover {
+				color: var(--ink);
+				background: var(--bg-panel);
+			}
+			.page-nav-link.active {
+				color: var(--accent);
+			}
+			.page-nav-link.active::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: -1rem;
+				height: 2px;
+				background: var(--accent);
+			}
+			.page-nav-link .num {
+				color: var(--accent);
+				font-size: 0.55rem;
+				opacity: 0.7;
+			}
+			.page-nav-link.active .num {
+				opacity: 1;
+			}
+			@media (max-width: 900px) {
+				.page-nav {
+					display: none;
+				}
+			}
 
-  main {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 3rem 2rem 5rem;
-  }
+			main {
+				max-width: 1300px;
+				margin: 0 auto;
+				padding: 3rem 2rem 5rem;
+			}
 
-  /* HERO */
-  .hero {
-    margin-bottom: 3rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--rule);
-  }
-  .hero-label {
-    font-family: var(--mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-    display: flex; align-items: center; gap: 0.75rem;
-  }
-  .hero-label::before {
-    content: ''; width: 30px; height: 1px; background: var(--accent);
-  }
+			/* HERO */
+			.hero {
+				margin-bottom: 3rem;
+				padding-bottom: 2.5rem;
+				border-bottom: 1px solid var(--rule);
+			}
+			.hero-label {
+				font-family: var(--mono);
+				font-size: 0.65rem;
+				letter-spacing: 0.28em;
+				text-transform: uppercase;
+				color: var(--accent);
+				margin-bottom: 1.5rem;
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+			}
+			.hero-label::before {
+				content: "";
+				width: 30px;
+				height: 1px;
+				background: var(--accent);
+			}
 
-  h1 {
-    font-family: var(--serif);
-    font-weight: 200;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1;
-    letter-spacing: -0.025em;
-    color: var(--ink);
-    margin-bottom: 1.5rem;
-    max-width: 18ch;
-  }
-  h1 em { font-style: italic; color: var(--accent); font-weight: 300; }
+			h1 {
+				font-family: var(--serif);
+				font-weight: 200;
+				font-size: clamp(2.5rem, 5vw, 4rem);
+				line-height: 1;
+				letter-spacing: -0.025em;
+				color: var(--ink);
+				margin-bottom: 1.5rem;
+				max-width: 18ch;
+			}
+			h1 em {
+				font-style: italic;
+				color: var(--accent);
+				font-weight: 300;
+			}
 
-  .hero-sub {
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: 1.15rem;
-    line-height: 1.65;
-    color: var(--ink-mid);
-    max-width: 60ch;
-  }
-  .hero-sub strong { color: var(--ink); font-weight: 400; }
-  .hero-sub em { color: var(--accent); font-style: italic; }
+			.hero-sub {
+				font-family: var(--serif);
+				font-weight: 300;
+				font-size: 1.15rem;
+				line-height: 1.65;
+				color: var(--ink-mid);
+				max-width: 60ch;
+			}
+			.hero-sub strong {
+				color: var(--ink);
+				font-weight: 400;
+			}
+			.hero-sub em {
+				color: var(--accent);
+				font-style: italic;
+			}
 
-  /* SECTION HEADER */
-  .section {
-    margin-top: 3rem;
-  }
-  .section-head {
-    margin-bottom: 1.75rem;
-    padding-bottom: 0.85rem;
-    border-bottom: 1px solid var(--rule);
-    display: flex; justify-content: space-between; align-items: baseline;
-    flex-wrap: wrap; gap: 0.5rem;
-  }
-  .section-tag {
-    font-family: var(--mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-  .section-h {
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: 1.5rem;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-  }
-  .section-h em { font-style: italic; color: var(--accent); font-weight: 300; }
-  .section-count {
-    font-family: var(--mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.18em;
-    color: var(--ink-faint);
-    text-transform: uppercase;
-  }
+			/* SECTION HEADER */
+			.section {
+				margin-top: 3rem;
+			}
+			.section-head {
+				margin-bottom: 1.75rem;
+				padding-bottom: 0.85rem;
+				border-bottom: 1px solid var(--rule);
+				display: flex;
+				justify-content: space-between;
+				align-items: baseline;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+			}
+			.section-tag {
+				font-family: var(--mono);
+				font-size: 0.6rem;
+				letter-spacing: 0.22em;
+				text-transform: uppercase;
+				color: var(--accent);
+			}
+			.section-h {
+				font-family: var(--serif);
+				font-weight: 300;
+				font-size: 1.5rem;
+				color: var(--ink);
+				letter-spacing: -0.01em;
+			}
+			.section-h em {
+				font-style: italic;
+				color: var(--accent);
+				font-weight: 300;
+			}
+			.section-count {
+				font-family: var(--mono);
+				font-size: 0.6rem;
+				letter-spacing: 0.18em;
+				color: var(--ink-faint);
+				text-transform: uppercase;
+			}
 
-  /* CRED CARDS GRID */
-  .cred-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1rem;
-  }
+			/* CRED CARDS GRID */
+			.cred-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+				gap: 1rem;
+			}
 
-  .cred-card {
-    background: var(--bg-panel);
-    border: 1px solid var(--rule-bright);
-    overflow: hidden;
-    transition: border-color 0.3s ease, transform 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-    display: flex; flex-direction: column;
-  }
-  .cred-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-  }
+			.cred-card {
+				background: var(--bg-panel);
+				border: 1px solid var(--rule-bright);
+				overflow: hidden;
+				transition:
+					border-color 0.3s ease,
+					transform 0.3s ease;
+				text-decoration: none;
+				color: inherit;
+				display: flex;
+				flex-direction: column;
+			}
+			.cred-card:hover {
+				border-color: var(--accent);
+				transform: translateY(-2px);
+			}
 
-  .cred-head {
-    padding: 0.7rem 1rem;
-    background: var(--bg);
-    border-bottom: 1px solid var(--rule);
-    display: flex; justify-content: space-between; align-items: center;
-    font-family: var(--mono);
-    font-size: 0.58rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-  }
-  .cred-head .firm { color: var(--ink-mid); font-weight: 500; }
-  .cred-head .verified {
-    color: var(--pos);
-    display: flex; align-items: center; gap: 0.4rem;
-  }
-  .cred-head .verified::before {
-    content: ''; width: 5px; height: 5px;
-    background: var(--pos); border-radius: 50%;
-    box-shadow: 0 0 6px var(--pos);
-  }
+			.cred-head {
+				padding: 0.7rem 1rem;
+				background: var(--bg);
+				border-bottom: 1px solid var(--rule);
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-family: var(--mono);
+				font-size: 0.58rem;
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				color: var(--ink-faint);
+			}
+			.cred-head .firm {
+				color: var(--ink-mid);
+				font-weight: 500;
+			}
+			.cred-head .verified {
+				color: var(--pos);
+				display: flex;
+				align-items: center;
+				gap: 0.4rem;
+			}
+			.cred-head .verified::before {
+				content: "";
+				width: 5px;
+				height: 5px;
+				background: var(--pos);
+				border-radius: 50%;
+				box-shadow: 0 0 6px var(--pos);
+			}
 
-  .cred-body {
-    padding: 1.5rem 1.25rem;
-    flex: 1;
-    display: flex; flex-direction: column; gap: 0.85rem;
-  }
+			.cred-body {
+				padding: 1.5rem 1.25rem;
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				gap: 0.85rem;
+			}
 
-  .cred-title {
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: 1.4rem;
-    line-height: 1.15;
-    color: var(--ink);
-    letter-spacing: -0.015em;
-  }
-  .cred-title em { font-style: italic; color: var(--accent); font-weight: 400; }
+			.cred-title {
+				font-family: var(--serif);
+				font-weight: 300;
+				font-size: 1.4rem;
+				line-height: 1.15;
+				color: var(--ink);
+				letter-spacing: -0.015em;
+			}
+			.cred-title em {
+				font-style: italic;
+				color: var(--accent);
+				font-weight: 400;
+			}
 
-  .cred-meta {
-    display: flex; flex-direction: column; gap: 0.5rem;
-    padding-top: 0.85rem;
-    border-top: 1px dashed var(--rule);
-    margin-top: auto;
-  }
-  .cred-meta-row {
-    display: flex; justify-content: space-between; align-items: baseline;
-    font-family: var(--mono);
-    font-size: 0.62rem;
-  }
-  .cred-meta-row .k {
-    color: var(--ink-faint);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-size: 0.55rem;
-  }
-  .cred-meta-row .v {
-    color: var(--ink);
-    font-variant-numeric: tabular-nums;
-  }
-  .cred-meta-row .v.acc { color: var(--accent); }
+			.cred-meta {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+				padding-top: 0.85rem;
+				border-top: 1px dashed var(--rule);
+				margin-top: auto;
+			}
+			.cred-meta-row {
+				display: flex;
+				justify-content: space-between;
+				align-items: baseline;
+				font-family: var(--mono);
+				font-size: 0.62rem;
+			}
+			.cred-meta-row .k {
+				color: var(--ink-faint);
+				letter-spacing: 0.15em;
+				text-transform: uppercase;
+				font-size: 0.55rem;
+			}
+			.cred-meta-row .v {
+				color: var(--ink);
+				font-variant-numeric: tabular-nums;
+			}
+			.cred-meta-row .v.acc {
+				color: var(--accent);
+			}
 
-  .cred-foot {
-    padding: 0.7rem 1.25rem;
-    border-top: 1px solid var(--rule);
-    background: var(--bg);
-    display: flex; justify-content: space-between; align-items: center;
-    font-family: var(--mono);
-    font-size: 0.58rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-  }
-  .cred-foot .view { color: var(--accent); }
-  .cred-foot .arrow {
-    transition: transform 0.25s ease;
-    display: inline-block;
-  }
-  .cred-card:hover .cred-foot .arrow { transform: translateX(3px); }
+			.cred-foot {
+				padding: 0.7rem 1.25rem;
+				border-top: 1px solid var(--rule);
+				background: var(--bg);
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-family: var(--mono);
+				font-size: 0.58rem;
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				color: var(--ink-faint);
+			}
+			.cred-foot .view {
+				color: var(--accent);
+			}
+			.cred-foot .arrow {
+				transition: transform 0.25s ease;
+				display: inline-block;
+			}
+			.cred-card:hover .cred-foot .arrow {
+				transform: translateX(3px);
+			}
 
-  /* CRED CARD ACCENT BARS */
-  .cred-card .accent-bar {
-    height: 3px;
-    background: var(--accent);
-  }
-  .cred-card.bmc .accent-bar { background: linear-gradient(90deg, #ff8c00, #ffa940); }
-  .cred-card.mff .accent-bar { background: linear-gradient(90deg, #1a4480, #2c5fa6); }
-  .cred-card.apex .accent-bar { background: linear-gradient(90deg, #d4af37, #e0c668); }
-  .cred-card.gft .accent-bar { background: linear-gradient(90deg, #1f3a8a, #3a5fc8); }
+			/* CRED CARD ACCENT BARS */
+			.cred-card .accent-bar {
+				height: 3px;
+				background: var(--accent);
+			}
+			.cred-card.bmc .accent-bar {
+				background: linear-gradient(90deg, #ff8c00, #ffa940);
+			}
+			.cred-card.mff .accent-bar {
+				background: linear-gradient(90deg, #1a4480, #2c5fa6);
+			}
+			.cred-card.apex .accent-bar {
+				background: linear-gradient(90deg, #d4af37, #e0c668);
+			}
+			.cred-card.gft .accent-bar {
+				background: linear-gradient(90deg, #1f3a8a, #3a5fc8);
+			}
 
-  /* ADDITIONAL CREDENTIALS */
-  .additional {
-    background: var(--bg-panel);
-    border: 1px solid var(--rule-bright);
-  }
-  .additional-list {
-    padding: 0.5rem 0;
-  }
-  .additional-row {
-    padding: 1rem 1.5rem;
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    gap: 1.5rem;
-    align-items: center;
-    border-bottom: 1px dashed var(--rule);
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    transition: background 0.2s ease;
-    text-decoration: none;
-    color: inherit;
-  }
-  .additional-row:last-child { border-bottom: none; }
-  .additional-row:hover { background: var(--bg); }
-  .additional-row .firm {
-    color: var(--ink);
-    font-weight: 500;
-  }
-  .additional-row .firm .desc {
-    display: block;
-    color: var(--ink-mid);
-    font-weight: 400;
-    margin-top: 0.2rem;
-    font-size: 0.72rem;
-  }
-  .additional-row .date {
-    color: var(--ink-faint);
-    font-size: 0.65rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-  .additional-row .view-link {
-    color: var(--accent);
-    font-size: 0.6rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    transition: color 0.25s ease;
-  }
-  .additional-row:hover .view-link { color: var(--accent-bright); }
+			/* ADDITIONAL CREDENTIALS */
+			.additional {
+				background: var(--bg-panel);
+				border: 1px solid var(--rule-bright);
+			}
+			.additional-list {
+				padding: 0.5rem 0;
+			}
+			.additional-row {
+				padding: 1rem 1.5rem;
+				display: grid;
+				grid-template-columns: 1fr auto auto;
+				gap: 1.5rem;
+				align-items: center;
+				border-bottom: 1px dashed var(--rule);
+				font-family: var(--mono);
+				font-size: 0.78rem;
+				transition: background 0.2s ease;
+				text-decoration: none;
+				color: inherit;
+			}
+			.additional-row:last-child {
+				border-bottom: none;
+			}
+			.additional-row:hover {
+				background: var(--bg);
+			}
+			.additional-row .firm {
+				color: var(--ink);
+				font-weight: 500;
+			}
+			.additional-row .firm .desc {
+				display: block;
+				color: var(--ink-mid);
+				font-weight: 400;
+				margin-top: 0.2rem;
+				font-size: 0.72rem;
+			}
+			.additional-row .date {
+				color: var(--ink-faint);
+				font-size: 0.65rem;
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+			}
+			.additional-row .view-link {
+				color: var(--accent);
+				font-size: 0.6rem;
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				transition: color 0.25s ease;
+			}
+			.additional-row:hover .view-link {
+				color: var(--accent-bright);
+			}
 
-  /* PLANNED CARD */
-  .planned-card {
-    background: var(--bg-panel);
-    border: 1px solid var(--rule-bright);
-    border-style: dashed;
-    padding: 1.5rem 1.5rem;
-    display: flex; align-items: center; gap: 1.25rem;
-  }
-  .planned-card .marker {
-    width: 36px; height: 36px;
-    border: 1px solid var(--accent);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--accent);
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    font-weight: 600;
-    flex-shrink: 0;
-  }
-  .planned-card .text {
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: 1.05rem;
-    color: var(--ink);
-    line-height: 1.4;
-  }
-  .planned-card .text em { color: var(--accent); font-style: italic; }
-  .planned-card .text .meta {
-    display: block;
-    font-family: var(--mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-    margin-top: 0.3rem;
-  }
+			/* PLANNED CARD */
+			.planned-card {
+				background: var(--bg-panel);
+				border: 1px solid var(--rule-bright);
+				border-style: dashed;
+				padding: 1.5rem 1.5rem;
+				display: flex;
+				align-items: center;
+				gap: 1.25rem;
+			}
+			.planned-card .marker {
+				width: 36px;
+				height: 36px;
+				border: 1px solid var(--accent);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: var(--accent);
+				font-family: var(--mono);
+				font-size: 0.7rem;
+				font-weight: 600;
+				flex-shrink: 0;
+			}
+			.planned-card .text {
+				font-family: var(--serif);
+				font-weight: 300;
+				font-size: 1.05rem;
+				color: var(--ink);
+				line-height: 1.4;
+			}
+			.planned-card .text em {
+				color: var(--accent);
+				font-style: italic;
+			}
+			.planned-card .text .meta {
+				display: block;
+				font-family: var(--mono);
+				font-size: 0.62rem;
+				letter-spacing: 0.15em;
+				text-transform: uppercase;
+				color: var(--ink-faint);
+				margin-top: 0.3rem;
+			}
 
-  /* DISCLAIMER */
-  .footer-note {
-    margin-top: 4rem;
-    padding: 1.25rem 1.5rem;
-    background: rgba(201, 168, 117, 0.04);
-    border-left: 2px solid var(--accent);
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    line-height: 1.7;
-    color: var(--ink-mid);
-  }
-  .footer-note strong { color: var(--accent); }
+			/* DISCLAIMER */
+			.footer-note {
+				margin-top: 4rem;
+				padding: 1.25rem 1.5rem;
+				background: rgba(201, 168, 117, 0.04);
+				border-left: 2px solid var(--accent);
+				font-family: var(--mono);
+				font-size: 0.7rem;
+				line-height: 1.7;
+				color: var(--ink-mid);
+			}
+			.footer-note strong {
+				color: var(--accent);
+			}
 
-  /* FOOTER */
-  footer {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--rule);
-    display: flex; justify-content: space-between; align-items: center;
-    font-family: var(--mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-    flex-wrap: wrap; gap: 1rem;
-  }
-  footer a {
-    color: var(--ink-mid);
-    text-decoration: none;
-    transition: color 0.25s ease;
-  }
-  footer a:hover { color: var(--accent); }
+			/* FOOTER */
+			footer {
+				margin-top: 3rem;
+				padding-top: 2rem;
+				border-top: 1px solid var(--rule);
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-family: var(--mono);
+				font-size: 0.6rem;
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				color: var(--ink-faint);
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+			footer a {
+				color: var(--ink-mid);
+				text-decoration: none;
+				transition: color 0.25s ease;
+			}
+			footer a:hover {
+				color: var(--accent);
+			}
 
-  @media (max-width: 640px) {
-    .masthead { padding: 0.85rem 1rem; }
-    .wordmark .crumb { display: none; }
-    main { padding: 2rem 1rem 3rem; }
-    h1 { font-size: 2rem; }
-    .hero-sub { font-size: 1rem; }
-    .cred-grid { grid-template-columns: 1fr; }
-    .additional-row { grid-template-columns: 1fr; gap: 0.5rem; }
-    .additional-row .date, .additional-row .view-link { justify-self: start; }
-    .planned-card { padding: 1.25rem; }
-  }
-</style>
-</head>
-<body>
+			@media (max-width: 640px) {
+				.masthead {
+					padding: 0.85rem 1rem;
+				}
+				.wordmark .crumb {
+					display: none;
+				}
+				main {
+					padding: 2rem 1rem 3rem;
+				}
+				h1 {
+					font-size: 2rem;
+				}
+				.hero-sub {
+					font-size: 1rem;
+				}
+				.cred-grid {
+					grid-template-columns: 1fr;
+				}
+				.additional-row {
+					grid-template-columns: 1fr;
+					gap: 0.5rem;
+				}
+				.additional-row .date,
+				.additional-row .view-link {
+					justify-self: start;
+				}
+				.planned-card {
+					padding: 1.25rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="grain"></div>
 
-<div class="grain"></div>
+		<header class="masthead">
+			<a href="index.html" class="wordmark">
+				<span class="initials">Z</span>aain Sabahat<span class="crumb"
+					>/ credentials</span
+				>
+			</a>
+			<nav class="page-nav">
+				<a href="certifications.html" class="page-nav-link active"
+					><span class="num">/01</span><span>Certifications</span></a
+				>
+				<a href="projects.html" class="page-nav-link"
+					><span class="num">/02</span><span>Projects</span></a
+				>
+				<a href="track.html" class="page-nav-link"
+					><span class="num">/03</span><span>Track</span></a
+				>
+				<a href="index.html#contact" class="page-nav-link"
+					><span class="num">/04</span><span>About</span></a
+				>
+			</nav>
+			<a href="index.html" class="nav-back">
+				<span>←</span> Back to terminal
+			</a>
+		</header>
 
-<header class="masthead">
-  <a href="index.html" class="wordmark">
-    <span class="initials">Z</span>aain Sabahat<span class="crumb">/ credentials</span>
-  </a>
-  <nav class="page-nav">
-    <a href="certifications.html" class="page-nav-link active"><span class="num">/01</span><span>Certifications</span></a>
-    <a href="projects.html" class="page-nav-link"><span class="num">/02</span><span>Projects</span></a>
-    <a href="track.html" class="page-nav-link"><span class="num">/03</span><span>Track</span></a>
-    <a href="index.html#contact" class="page-nav-link"><span class="num">/04</span><span>About</span></a>
-  </nav>
-  <a href="index.html" class="nav-back">
-    <span>←</span> Back to terminal
-  </a>
-</header>
+		<main>
+			<section class="hero">
+				<div class="hero-label">§ F4 — Credentials &amp; evaluations</div>
+				<h1>Externally <em>verified</em>.</h1>
+				<p class="hero-sub">
+					Course completions, funded-account evaluations, and exams I've sat.
+					Every credential below has a
+					<strong>date, an issuing body, and a verifiable record</strong>. Click
+					any card to view the certificate.
+				</p>
+			</section>
 
-<main>
-
-  <section class="hero">
-    <div class="hero-label">§ F4 — Credentials &amp; evaluations</div>
-    <h1>Externally <em>verified</em>.</h1>
-    <p class="hero-sub">
-      Course completions, funded-account evaluations, and exams I've sat. Every credential below has a <strong>date, an issuing body, and a verifiable record</strong>. Click any card to view the certificate.
-    </p>
-  </section>
-
-  <!-- ============================================
+			<!-- ============================================
        SECTION 1 — EDUCATION & EXAMS
        ============================================ -->
-  <section class="section">
-    <div class="section-head">
-      <div>
-        <div class="section-tag">// 01 — Education, exams &amp; achievements</div>
-        <h2 class="section-h">Academic <em>record</em>.</h2>
-      </div>
-      <div class="section-count">3 entries</div>
-    </div>
+			<section class="section">
+				<div class="section-head">
+					<div>
+						<div class="section-tag">
+							// 01 — Education, exams &amp; achievements
+						</div>
+						<h2 class="section-h">Academic <em>record</em>.</h2>
+					</div>
+					<div class="section-count">3 entries</div>
+				</div>
 
-    <div class="cred-grid">
+				<div class="cred-grid">
+					<a
+						href="certs/bmc.png"
+						target="_blank"
+						rel="noopener"
+						class="cred-card bmc"
+					>
+						<div class="accent-bar"></div>
+						<div class="cred-head">
+							<span class="firm">Bloomberg for Education</span>
+							<span class="verified">Verified</span>
+						</div>
+						<div class="cred-body">
+							<div class="cred-title"><em>Bloomberg</em> Market Concepts</div>
+							<div class="cred-meta">
+								<div class="cred-meta-row">
+									<span class="k">Course</span><span class="v">BMC · Full</span>
+								</div>
+								<div class="cred-meta-row">
+									<span class="k">Coverage</span
+									><span class="v"
+										>Econ · Currencies · Fixed Income · Equities</span
+									>
+								</div>
+								<div class="cred-meta-row">
+									<span class="k">Status</span
+									><span class="v acc">Completed</span>
+								</div>
+							</div>
+						</div>
+						<div class="cred-foot">
+							<span>BMC-CERTIFICATE</span>
+							<span class="view">View PDF <span class="arrow">→</span></span>
+						</div>
+					</a>
 
-      <a href="certs/bmc.pdf" target="_blank" rel="noopener" class="cred-card bmc">
-        <div class="accent-bar"></div>
-        <div class="cred-head">
-          <span class="firm">Bloomberg for Education</span>
-          <span class="verified">Verified</span>
-        </div>
-        <div class="cred-body">
-          <div class="cred-title"><em>Bloomberg</em> Market Concepts</div>
-          <div class="cred-meta">
-            <div class="cred-meta-row"><span class="k">Course</span><span class="v">BMC · Full</span></div>
-            <div class="cred-meta-row"><span class="k">Coverage</span><span class="v">Econ · Currencies · Fixed Income · Equities</span></div>
-            <div class="cred-meta-row"><span class="k">Status</span><span class="v acc">Completed</span></div>
-          </div>
-        </div>
-        <div class="cred-foot">
-          <span>BMC-CERTIFICATE</span>
-          <span class="view">View PDF <span class="arrow">→</span></span>
-        </div>
-      </a>
+					<div
+						class="cred-card"
+						style="background: var(--bg-panel); cursor: default"
+					>
+						<div
+							class="accent-bar"
+							style="background: linear-gradient(90deg, #6b9665, #88b87f)"
+						></div>
+						<div class="cred-head">
+							<span class="firm">STOCKTRAK · Investments Course</span>
+							<span class="verified">Achievement</span>
+						</div>
+						<div class="cred-body">
+							<div class="cred-title">
+								<em>1<sup>st</sup></em> in class · Portfolio Simulation
+							</div>
+							<div class="cred-meta">
+								<div class="cred-meta-row">
+									<span class="k">Result</span
+									><span class="v acc">C$1.0M → C$1.15M</span>
+								</div>
+								<div class="cred-meta-row">
+									<span class="k">Period</span
+									><span class="v">3-month managed mandate</span>
+								</div>
+								<div class="cred-meta-row">
+									<span class="k">Setting</span
+									><span class="v"
+										>Investments course · Memorial University</span
+									>
+								</div>
+							</div>
+						</div>
+						<div class="cred-foot">
+							<span>STOCKTRAK-1ST</span>
+							<span class="view" style="color: var(--ink-faint)"
+								>+15.0% over period</span
+							>
+						</div>
+					</div>
 
-      <div class="cred-card" style="background: var(--bg-panel); cursor: default;">
-        <div class="accent-bar" style="background: linear-gradient(90deg, #6b9665, #88b87f);"></div>
-        <div class="cred-head">
-          <span class="firm">STOCKTRAK · Investments Course</span>
-          <span class="verified">Achievement</span>
-        </div>
-        <div class="cred-body">
-          <div class="cred-title"><em>1<sup>st</sup></em> in class · Portfolio Simulation</div>
-          <div class="cred-meta">
-            <div class="cred-meta-row"><span class="k">Result</span><span class="v acc">C$1.0M → C$1.15M</span></div>
-            <div class="cred-meta-row"><span class="k">Period</span><span class="v">3-month managed mandate</span></div>
-            <div class="cred-meta-row"><span class="k">Setting</span><span class="v">Investments course · Memorial University</span></div>
-          </div>
-        </div>
-        <div class="cred-foot">
-          <span>STOCKTRAK-1ST</span>
-          <span class="view" style="color: var(--ink-faint);">+15.0% over period</span>
-        </div>
-      </div>
+					<div class="planned-card">
+						<div class="marker">∎</div>
+						<div class="text">
+							<em>CFA Program · Level I</em>
+							<span class="meta">Planned · Preparation underway</span>
+						</div>
+					</div>
+				</div>
+			</section>
 
-      <div class="planned-card">
-        <div class="marker">∎</div>
-        <div class="text">
-          <em>CFA Program · Level I</em>
-          <span class="meta">Planned · Preparation underway</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============================================
+			<!-- ============================================
        SECTION 2 — FUNDED TRADING EVALUATIONS
        ============================================ -->
-  <section class="section">
-    <div class="section-head">
-      <div>
-        <div class="section-tag">// 02 — Funded trading evaluations</div>
-        <h2 class="section-h">Programs <em>passed</em>, externally imposed limits.</h2>
-      </div>
-      <div class="section-count">3 firms · funded</div>
-    </div>
+			<section class="section">
+				<div class="section-head">
+					<div>
+						<div class="section-tag">// 02 — Funded trading evaluations</div>
+						<h2 class="section-h">
+							Programs <em>passed</em>, externally imposed limits.
+						</h2>
+					</div>
+					<div class="section-count">3 firms · funded</div>
+				</div>
 
-    <div class="cred-grid">
+				<div class="cred-grid">
+					<a
+						href="certs/my_forex_fund.png"
+						target="_blank"
+						rel="noopener"
+						class="cred-card mff"
+					>
+						<div class="accent-bar"></div>
+						<div class="cred-head">
+							<span class="firm">MyForexFunds</span>
+							<span class="verified">Verified</span>
+						</div>
+						<div class="cred-body">
+							<div class="cred-title">
+								<em>Professional Trader</em> · Evaluation passed
+							</div>
+							<div class="cred-meta">
+								<div class="cred-meta-row">
+									<span class="k">Date</span><span class="v">23 Jan 2023</span>
+								</div>
+								<div class="cred-meta-row">
+									<span class="k">Credential ID</span
+									><span class="v acc">C297573</span>
+								</div>
+								<div class="cred-meta-row">
+									<span class="k">Issued by</span
+									><span class="v">Murtuza Kazmi · CEO</span>
+								</div>
+							</div>
+						</div>
+						<div class="cred-foot">
+							<span>MFF-C297573</span>
+							<span class="view">View PDF <span class="arrow">→</span></span>
+						</div>
+					</a>
 
-      <a href="certs/mff.pdf" target="_blank" rel="noopener" class="cred-card mff">
-        <div class="accent-bar"></div>
-        <div class="cred-head">
-          <span class="firm">MyForexFunds</span>
-          <span class="verified">Verified</span>
-        </div>
-        <div class="cred-body">
-          <div class="cred-title"><em>Professional Trader</em> · Evaluation passed</div>
-          <div class="cred-meta">
-            <div class="cred-meta-row"><span class="k">Date</span><span class="v">23 Jan 2023</span></div>
-            <div class="cred-meta-row"><span class="k">Credential ID</span><span class="v acc">C297573</span></div>
-            <div class="cred-meta-row"><span class="k">Issued by</span><span class="v">Murtuza Kazmi · CEO</span></div>
-          </div>
-        </div>
-        <div class="cred-foot">
-          <span>MFF-C297573</span>
-          <span class="view">View PDF <span class="arrow">→</span></span>
-        </div>
-      </a>
+					<a
+						href="certs/apex_cert.png"
+						target="_blank"
+						rel="noopener"
+						class="cred-card apex"
+					>
+						<div class="accent-bar"></div>
+						<div class="cred-head">
+							<span class="firm">Apex Trader Funding</span>
+							<span class="verified">Verified</span>
+						</div>
+						<div class="cred-body">
+							<div class="cred-title">
+								<em>50K</em> Tradovate Account · Funded
+							</div>
+							<div class="cred-meta">
+								<div class="cred-meta-row">
+									<span class="k">Account size</span
+									><span class="v acc">USD 50,000</span>
+								</div>
+								<div class="cred-meta-row">
+									<span class="k">Platform</span
+									><span class="v">Tradovate</span>
+								</div>
+								<div class="cred-meta-row">
+									<span class="k">Issued by</span
+									><span class="v">Darrell Martin · CEO</span>
+								</div>
+							</div>
+						</div>
+						<div class="cred-foot">
+							<span>APEX-50K</span>
+							<span class="view">View PDF <span class="arrow">→</span></span>
+						</div>
+					</a>
 
-      <a href="certs/apex.pdf" target="_blank" rel="noopener" class="cred-card apex">
-        <div class="accent-bar"></div>
-        <div class="cred-head">
-          <span class="firm">Apex Trader Funding</span>
-          <span class="verified">Verified</span>
-        </div>
-        <div class="cred-body">
-          <div class="cred-title"><em>50K</em> Tradovate Account · Funded</div>
-          <div class="cred-meta">
-            <div class="cred-meta-row"><span class="k">Account size</span><span class="v acc">USD 50,000</span></div>
-            <div class="cred-meta-row"><span class="k">Platform</span><span class="v">Tradovate</span></div>
-            <div class="cred-meta-row"><span class="k">Issued by</span><span class="v">Darrell Martin · CEO</span></div>
-          </div>
-        </div>
-        <div class="cred-foot">
-          <span>APEX-50K</span>
-          <span class="view">View PDF <span class="arrow">→</span></span>
-        </div>
-      </a>
+					<a
+						href="certs/gft.png"
+						target="_blank"
+						rel="noopener"
+						class="cred-card gft"
+					>
+						<div class="accent-bar"></div>
+						<div class="cred-head">
+							<span class="firm">Goat Funded Trader</span>
+							<span class="verified">Verified</span>
+						</div>
+						<div class="cred-body">
+							<div class="cred-title"><em>Full Assessment</em> · Passed</div>
+							<div class="cred-meta">
+								<div class="cred-meta-row">
+									<span class="k">Date</span><span class="v">14 Sep 2024</span>
+								</div>
+								<div class="cred-meta-row">
+									<span class="k">Type</span
+									><span class="v">Certificate of Achievement</span>
+								</div>
+								<div class="cred-meta-row">
+									<span class="k">Issued by</span
+									><span class="v">Edoardo D.T. &amp; Matteo Desideri</span>
+								</div>
+							</div>
+						</div>
+						<div class="cred-foot">
+							<span>GFT-FULL-ASSESSMENT</span>
+							<span class="view">View PDF <span class="arrow">→</span></span>
+						</div>
+					</a>
+				</div>
+			</section>
 
-      <a href="certs/gft.pdf" target="_blank" rel="noopener" class="cred-card gft">
-        <div class="accent-bar"></div>
-        <div class="cred-head">
-          <span class="firm">Goat Funded Trader</span>
-          <span class="verified">Verified</span>
-        </div>
-        <div class="cred-body">
-          <div class="cred-title"><em>Full Assessment</em> · Passed</div>
-          <div class="cred-meta">
-            <div class="cred-meta-row"><span class="k">Date</span><span class="v">14 Sep 2024</span></div>
-            <div class="cred-meta-row"><span class="k">Type</span><span class="v">Certificate of Achievement</span></div>
-            <div class="cred-meta-row"><span class="k">Issued by</span><span class="v">Edoardo D.T. &amp; Matteo Desideri</span></div>
-          </div>
-        </div>
-        <div class="cred-foot">
-          <span>GFT-FULL-ASSESSMENT</span>
-          <span class="view">View PDF <span class="arrow">→</span></span>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- ============================================
+			<!-- ============================================
        SECTION 3 — ADDITIONAL CREDENTIALS
        ============================================ -->
-  <section class="section">
-    <div class="section-head">
-      <div>
-        <div class="section-tag">// 03 — Additional credentials</div>
-        <h2 class="section-h">For <em>completeness</em>.</h2>
-      </div>
-      <div class="section-count">3 entries</div>
-    </div>
+			<section class="section">
+				<div class="section-head">
+					<div>
+						<div class="section-tag">// 03 — Additional credentials</div>
+						<h2 class="section-h">For <em>completeness</em>.</h2>
+					</div>
+					<div class="section-count">3 entries</div>
+				</div>
 
-    <div class="additional">
-      <div class="additional-list">
+				<div class="additional">
+					<div class="additional-list">
+						<a
+							href="certs/instant_funding.png"
+							target="_blank"
+							rel="noopener"
+							class="additional-row"
+						>
+							<div class="firm">
+								Instant Funding · Challenge passed
+								<span class="desc"
+									>Acello Ltd · Funded-account evaluation challenge</span
+								>
+							</div>
+							<div class="date">16 May 2024</div>
+							<div class="view-link">View →</div>
+						</a>
 
-        <a href="certs/instantfunding-may.png" target="_blank" rel="noopener" class="additional-row">
-          <div class="firm">
-            Instant Funding · Challenge passed
-            <span class="desc">Acello Ltd · Funded-account evaluation challenge</span>
-          </div>
-          <div class="date">16 May 2024</div>
-          <div class="view-link">View →</div>
-        </a>
+						<a
+							href="certs/instant_funding.png"
+							target="_blank"
+							rel="noopener"
+							class="additional-row"
+						>
+							<div class="firm">
+								Instant Funding · Challenge passed
+								<span class="desc">Acello Ltd · Second challenge cycle</span>
+							</div>
+							<div class="date">15 Oct 2024</div>
+							<div class="view-link">View →</div>
+						</a>
 
-        <a href="certs/instantfunding-oct.png" target="_blank" rel="noopener" class="additional-row">
-          <div class="firm">
-            Instant Funding · Challenge passed
-            <span class="desc">Acello Ltd · Second challenge cycle</span>
-          </div>
-          <div class="date">15 Oct 2024</div>
-          <div class="view-link">View →</div>
-        </a>
+						<a
+							href="certs/gft_phase_1.png"
+							target="_blank"
+							rel="noopener"
+							class="additional-row"
+						>
+							<div class="firm">
+								Goat Funded Trader · Phase 1 completed
+								<span class="desc"
+									>100K Challenge · First phase of two-phase evaluation</span
+								>
+							</div>
+							<div class="date">27 Apr 2026</div>
+							<div class="view-link">View →</div>
+						</a>
+					</div>
+				</div>
+			</section>
 
-        <a href="certs/gft-phase1.png" target="_blank" rel="noopener" class="additional-row">
-          <div class="firm">
-            Goat Funded Trader · Phase 1 completed
-            <span class="desc">100K Challenge · First phase of two-phase evaluation</span>
-          </div>
-          <div class="date">27 Apr 2026</div>
-          <div class="view-link">View →</div>
-        </a>
+			<!-- DISCLAIMER -->
+			<div class="footer-note">
+				<strong>Note.</strong> All certificates linked above are the original
+				PDFs and PNGs issued by the respective bodies. Names, dates, and
+				credential IDs match what appears on each document. Where a credential
+				has a verifiable lookup (e.g. Bloomberg, MyForexFunds), the ID is shown
+				for reference.
+			</div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- DISCLAIMER -->
-  <div class="footer-note">
-    <strong>Note.</strong> All certificates linked above are the original PDFs and PNGs issued by the respective bodies. Names, dates, and credential IDs match what appears on each document. Where a credential has a verifiable lookup (e.g. Bloomberg, MyForexFunds), the ID is shown for reference.
-  </div>
-
-  <footer>
-    <div>© 2026 Zaain Sabahat</div>
-    <div>
-      <a href="index.html">← Terminal</a>
-      &nbsp;·&nbsp;
-      <a href="track.html">Track record</a>
-      &nbsp;·&nbsp;
-      <a href="mailto:zaainsabahat@gmail.com">zaainsabahat@gmail.com</a>
-    </div>
-    <div>St. John's, Newfoundland</div>
-  </footer>
-
-</main>
-
-</body>
+			<footer>
+				<div>© 2026 Zaain Sabahat</div>
+				<div>
+					<a href="index.html">← Terminal</a>
+					&nbsp;·&nbsp;
+					<a href="track.html">Track record</a>
+					&nbsp;·&nbsp;
+					<a href="mailto:zaainsabahat@gmail.com">zaainsabahat@gmail.com</a>
+				</div>
+				<div>St. John's, Newfoundland</div>
+			</footer>
+		</main>
+	</body>
 </html>
